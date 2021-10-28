@@ -7,6 +7,34 @@
     <title>Home-Sweet-Home</title>
 </head>
 <body>
-    
+    <header>
+        <!--Dropdown for no. of bedrooms-->
+        <select name="bedrooms" id="bedrooms" class="select-dropdown">
+            <option value="" disabled selected>Choose the number of bedrooms</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option vlaue="3+">3+ Bedrooms</option>
+        </select>
+        <!--Dropdown for no. of bathrooms-->
+        <select name="bathrooms" id="bathrooms" class="select-dropdown">
+            <option value="" disabled selected>Choose the number of bathrooms</option>
+            <option value="1">1 Bathroom</option>
+            <option value="2">2 Bathroom</option>
+            <option value="3+">3+ Bathrooms</option>
+        </select>
+        <!--Dropdown for preferred service(i.e. Airbnb, Apartments.com, etc.)-->
+        <select name="service" id="service" class="select-dropdown">
+            <option value="" disabled selected>Choose your preferred service</option>
+            <option value="Airbnb">Airbnb</option>
+            <option value="Zillow">Zillow</option>
+        </select>
+        <!--Input box for zip code-->
+        <input type="text" name="zip-code" placeholder="Enter Zip Code" />
+        <!--Submit Button-->
+        <button class="btn" id="submit-input" type="submit">Submit</button>
+    </header>
 </body>
+<footer>
+    
+</footer>
 </html>

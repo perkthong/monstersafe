@@ -1,0 +1,2409 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "x-version": "1.0-beta",
+    "version": "",
+    "title": "HousingAnywhere API",
+    "x-logo": {
+      "altText": "HousingAnywhere logo",
+      "url": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTA4LjkgMzIiIHdpZHRoPSIxMDkiIGhlaWdodD0iMzIiPjxzdHlsZT4uc3Qwe2ZpbGw6I2YzNzEyMX08L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNS43IDI4LjdIMi4xYy0xIDAtMS45LS44LTEuOS0xLjkgMC0xIC44LTEuOSAxLjktMS45aDIxLjdWMTQuM0wxMy44IDYgNCAxNC4zdjQuNWMwIDEtLjggMS45LTEuOSAxLjktMSAwLTEuOS0uOC0xLjktMS45di01LjRjMC0uNi4yLTEuMS43LTEuNGwxMS43LTkuOWMuNy0uNiAxLjctLjYgMi40IDBMMjYuOSAxMmMuNC40LjcuOS43IDEuNXYxMy40YzAgMS0uOSAxLjgtMS45IDEuOHpNMzQuOCAxLjZoMi45djRoMy4ydi00aDIuOXYxMC44aC0yLjlWOC4xaC0zLjJ2NC4zaC0yLjlWMS42ek00NS40IDguMmMwLTIuOCAyLTQuMyA0LjEtNC4zIDIuMSAwIDQuMSAxLjYgNC4xIDQuM3MtMiA0LjMtNC4xIDQuM2MtMi4xLjEtNC4xLTEuNS00LjEtNC4zem01LjMgMGMwLTEuMy0uMy0yLjEtMS4yLTIuMXMtMS4xLjktMS4xIDIuMS4zIDIuMSAxLjIgMi4xIDEuMS0uOCAxLjEtMi4xek01NS4xIDkuMlY0LjFINTh2NC43YzAgMS4xLjMgMS4zLjggMS4zcy44LS4yIDEuMi0uN1Y0LjFoMi45djguM2gtMi4zbC0uMi0xLjFoLS4xYy0uNy44LTEuNCAxLjMtMi42IDEuMy0xLjggMC0yLjYtMS40LTIuNi0zLjR6TTY0LjEgMTEuNGwxLjMtMS44Yy44LjYgMS40LjggMiAuOC42IDAgLjgtLjIuOC0uNSAwLS40LS44LS42LTEuNi0xLTEtLjQtMi4xLTEuMS0yLjEtMi41IDAtMS42IDEuMy0yLjcgMy4zLTIuNyAxLjQgMCAyLjMuNSAzLjEgMS4xbC0xLjMgMS43Yy0uNi0uMy0xLjItLjUtMS43LS41cy0uNy4xLS43LjUuNy42IDEuNi45YzEgLjQgMi4xIDEgMi4xIDIuNSAwIDEuNi0xLjIgMi44LTMuNSAyLjgtMS4yLS4xLTIuNS0uNi0zLjMtMS4zek03Mi4xIDEuNmMwLS44LjctMS40IDEuNi0xLjQuOSAwIDEuNi42IDEuNiAxLjQgMCAuOC0uNyAxLjQtMS42IDEuNC0xIC4xLTEuNi0uNS0xLjYtMS40em0uMSAyLjVoMi45djguM2gtMi45VjQuMXpNNzcgNC4xaDIuM2wuMiAxaC4xYy43LS42IDEuNS0xLjIgMi42LTEuMiAxLjggMCAyLjYgMS4zIDIuNiAzLjR2NS4xSDgyVjcuNmMwLTEuMS0uMy0xLjMtLjgtMS4zcy0uOC4yLTEuMy42djUuNEg3N1Y0LjF6TTg2LjIgMTMuN2MwLS43LjQtMS4yIDEuMi0xLjZWMTJjLS40LS4zLS44LS43LS44LTEuNCAwLS42LjQtMS4yLjktMS42LS42LS40LTEuMS0xLjItMS4xLTIuMSAwLTIuMSAxLjctMyAzLjUtMyAuNSAwIC45LjEgMS4zLjJoMy4xdjIuMWgtMS4yYy4xLjIuMS41LjEuOSAwIDItMS41IDIuOC0zLjMgMi44LS4zIDAtLjYgMC0uOS0uMS0uMi4xLS4yLjItLjIuNSAwIC40LjMuNSAxLjIuNWgxLjJjMi4xIDAgMy4zLjYgMy4zIDIuMiAwIDEuOC0xLjkgMy00LjggMy0xLjktLjItMy41LS44LTMuNS0yLjN6bTUuNi0uNGMwLS40LS40LS41LTEuMS0uNUg5MGMtLjcgMC0xIDAtMS4yLS4xLS4yLjItLjMuNC0uMy42IDAgLjUuNy44IDEuNi44IDEtLjEgMS43LS40IDEuNy0uOHptLTEtNi40YzAtLjgtLjQtMS4xLS45LTEuMXMtLjkuNC0uOSAxLjFjMCAuOC40IDEuMi45IDEuMi42IDAgLjktLjQuOS0xLjJ6TTM2LjcgMTcuOWgzLjRsMy4zIDEwLjhoLTNsLS41LTIuM2gtM2wtLjUgMi4zaC0yLjlsMy4yLTEwLjh6bS43IDYuM2gybC0uMi0uN2MtLjMtMS0uNS0yLjMtLjgtMy40aC0uMWMtLjIgMS4xLS41IDIuNC0uOCAzLjRsLS4xLjd6TTQ0LjIgMjAuNGgyLjNsLjIgMWguMWMuNy0uNiAxLjUtMS4yIDIuNi0xLjIgMS44IDAgMi42IDEuMyAyLjYgMy40djUuMWgtMi45VjI0YzAtMS4xLS4zLTEuMy0uOC0xLjNzLS44LjItMS4zLjZ2NS40aC0yLjl2LTguM3pNNTMuOSAzMS43bC41LTIuMmMuMSAwIC40LjEuNS4xLjggMCAxLjEtLjMgMS4zLS44bC4xLS40LTMuMi04SDU2bDEgMy4yYy4yLjguNCAxLjUuNiAyLjRoLjFjLjItLjguMy0xLjYuNS0yLjRsLjgtMy4yaDIuN2wtMi44IDguMmMtLjkgMi4yLTEuOCAzLjItMy44IDMuMi0uNSAwLS45IDAtMS4yLS4xek02Mi4zIDIwLjRoMi44bC42IDMuNWMuMS44LjIgMS43LjMgMi41aC4xYy4xLS45LjMtMS43LjUtMi41bC44LTMuNWgyLjRsLjggMy41Yy4yLjguMyAxLjcuNSAyLjVoLjFjLjEtLjkuMi0xLjcuMy0yLjVsLjYtMy41aDIuNmwtMS45IDguM2gtMy4zbC0uNS0yLjljLS4xLS44LS4zLTEuNS0uNC0yLjRoLS4xYy0uMS45LS4yIDEuNy0uNCAyLjRsLS42IDIuOWgtMy4ybC0yLTguM3pNNzYuMSAxNy4ySDc5djIuN2wtLjEgMS40Yy42LS41IDEuNC0xLjEgMi41LTEuMSAxLjggMCAyLjYgMS4zIDIuNiAzLjR2NS4xaC0yLjlWMjRjMC0xLjEtLjMtMS4zLS44LTEuM3MtLjguMi0xLjMuNnY1LjRoLTIuOVYxNy4yek04NS4zIDI0LjZjMC0yLjcgMi00LjMgNC00LjMgMi41IDAgMy42IDEuOCAzLjYgNCAwIC41LS4xIDEtLjEgMS4yaC00LjdjLjMgMSAxIDEuMyAxLjkgMS4zLjYgMCAxLjEtLjIgMS43LS41bC45IDEuN2MtLjkuNi0yLjEgMS0zIDEtMi40LS4xLTQuMy0xLjctNC4zLTQuNHptNS4yLTFjMC0uNi0uMy0xLjItMS4xLTEuMi0uNiAwLTEuMi40LTEuMyAxLjJoMi40ek05NC41IDIwLjRoMi4zbC4yIDEuNGguMWMuNi0xLjEgMS41LTEuNiAyLjQtMS42LjUgMCAuOC4xIDEgLjJsLS41IDIuNWMtLjMtLjEtLjYtLjEtLjktLjEtLjYgMC0xLjMuNC0xLjcgMS40djQuNmgtMi45di04LjR6TTEwMC44IDI0LjZjMC0yLjcgMi00LjMgNC00LjMgMi41IDAgMy42IDEuOCAzLjYgNCAwIC41LS4xIDEtLjEgMS4yaC00LjdjLjMgMSAxIDEuMyAxLjkgMS4zLjYgMCAxLjEtLjIgMS43LS41bC45IDEuN2MtLjkuNi0yLjEgMS0zIDEtMi40LS4xLTQuMy0xLjctNC4zLTQuNHptNS4yLTFjMC0uNi0uMy0xLjItMS4xLTEuMi0uNiAwLTEuMi40LTEuMyAxLjJoMi40eiIvPjwvc3ZnPg=="
+    },
+    "description": "\n# Introduction\nThe HousingAnywhere API allows you to easily publish your listings on the largest rental accommodation platform globally. The API strongly advances data interoperability between HousingAnywhere and its partners. As property managers you can use the API to connect your inventory to the HousingAnywhere platform, enabling you to reach a far bigger target audience. Bookings take place on the HousingAnywhere platform and the API will ensure that partner systems are updated in real-time whenever one of your properties gets booked on the HousingAnywhere platform.\n## Publish Quality Listings\nThe HousingAnywhere API offers a range of possibilities. The API supplies a managed solution for storing and accessing property data such as media and listing details on HousingAnywhere.\n## Integrate with Property Management Systems\nConnected property managers can store and access information regarding the pricing and availability of all their rental units. This information is updated based on a predetermined frequency as updates are pulled by the HA platform.\n## Bookings made easy\nWebhooks enable two-way integrations to ensure that information is kept synchronized between HousingAnywhere and systems that are already being used by property managers. By using these webhooks, bookings and cancellations can automatically be confirmed as they happen, and availability calendars are updated on the fly.\n# Getting Started guide\nTo get started, any user can request an API key. Every API request needs a private API key in query parameters as a part of authentication, which is unique to each client. Please contact our team to request your unique key. For more information, contact us at api@housinganywhere.com\n# Authentication\nAuthentication is done using a custom query parameter called 'api_key'.\n\n<!-- ReDoc-Inject: <security-definitions> -->\n\n# Pagination\nWe utilize cusror based pagination via the `nextCursor` parameter. It takes an existing object ID value (see below) and return objects.\n### Arguments\n**limit** _optional_, _defaults to 20_\n\nA limit on the number of objects to be returned.\n\n**nextCursor** _optional_\n\nA cursor for use in pagination, it is an object ID that defines your place in the list. For instance, if you make a request and receive 20 objects with a `<value>` for `nextCursor`, subsequent calls include `nextCursor=<value>` in order to fetch the next page of the list.\n# Technical Support\nIf you need additional technical support after going through our technical documentation, our team of international account managers will be eager to facilitate you.\n",
+    "contact": {
+      "name": "Support",
+      "email": "api@housinganywhere.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.housinganywhere.com/v1",
+      "description": "Production Server. Use it for real data"
+    },
+    {
+      "url": "https://api.s.stage.housinganywhere.com/api/v1",
+      "description": "Test server. Use it for test data"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Listings"
+    },
+    {
+      "name": "Media"
+    },
+    {
+      "name": "Calendar"
+    },
+    {
+      "name": "Costs"
+    },
+    {
+      "name": "Webhooks"
+    }
+  ],
+  "paths": {
+    "/listings": {
+      "post": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Add Listing",
+        "description": "Creates a listing on the HousingAnywhere platform. When creating a single listing, your request must include the fields marked as mandatory, other fields are optional but encouraged.",
+        "operationId": "addListing",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Add Listing Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Get All Listings",
+        "description": "Get all listings of the particular advertiser.",
+        "operationId": "getListings",
+        "responses": {
+          "200": {
+            "description": "GetListingsResponse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingsGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}": {
+      "patch": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Update Listing",
+        "description": "Update details of specific listing.",
+        "operationId": "updateListing",
+        "parameters": [
+          {
+            "name": "listing_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the listing to update",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update Listing Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Delete Listing",
+        "description": "Delete an active listing.",
+        "operationId": "archiveListing",
+        "parameters": [
+          {
+            "name": "listing_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the listing to delete",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete Listing Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingDeleteResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/images": {
+      "get": {
+        "tags": [
+          "Media"
+        ],
+        "summary": "Get All Images",
+        "description": "Get list of all the images of the specific listing.",
+        "operationId": "getListingImages",
+        "responses": {
+          "200": {
+            "description": "Success responses of all the images of the listing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingImagesGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/images/add": {
+      "post": {
+        "tags": [
+          "Media"
+        ],
+        "summary": "Add Images",
+        "description": "Add images to the specific listing. Only 100 images at the time can be uploaded. To upload more than 100 images, multiple calls should be made.",
+        "operationId": "addListingImages",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingImagesCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Images submitted to upload.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingImagesCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/images/update": {
+      "patch": {
+        "tags": [
+          "Media"
+        ],
+        "summary": "Edit Images",
+        "description": "Edit listing images rotation and ordering.",
+        "operationId": "updateListingImages",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingImagesUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Images updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingImagesUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/images/delete": {
+      "post": {
+        "tags": [
+          "Media"
+        ],
+        "summary": "Delete Images",
+        "description": "Delete listing images.",
+        "operationId": "deleteListingImages",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingImagesDeleteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Images deleted successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingImagesDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/hide": {
+      "post": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Hide Listing",
+        "description": "Hide an active listing from the HousingAnywhere platform without deleting it.",
+        "operationId": "hideListing",
+        "parameters": [
+          {
+            "name": "listing_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the listing to hide",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing hidden successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingShowHideResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/show": {
+      "post": {
+        "tags": [
+          "Listings"
+        ],
+        "summary": "Show Listing",
+        "description": "Show a hidden listing on the HousingAnywhere platform.",
+        "operationId": "showListing",
+        "parameters": [
+          {
+            "name": "listing_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the listing to show",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing shown successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingShowHideResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/calendar-operations": {
+      "get": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Get Listing Calendar",
+        "description": "Get list of all the calendar operations of the specific listing.",
+        "operationId": "getListingCalOps",
+        "responses": {
+          "200": {
+            "description": "Success responses of all the calendar operations of the listing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingCalOpsGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Edit Listing Calendar",
+        "description": "Edit calendar operations of the specific listing.",
+        "operationId": "updateListingCalOps",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingCalOpsUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Listing calendar operations updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingCalOpsUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/listings/{listing_id}/costs": {
+      "get": {
+        "tags": [
+          "Costs"
+        ],
+        "summary": "Get Listing Costs",
+        "description": "Get a list of all the costs associated with the listing.",
+        "operationId": "getListingCosts",
+        "responses": {
+          "200": {
+            "description": "Success responses for costs of the listing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingCostsGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Costs"
+        ],
+        "summary": "Edit Listing Costs",
+        "description": "Edit costs associated with the listing.",
+        "operationId": "updateListingCosts",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingCostsUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Listing costs updated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingCostsUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/webhooks": {
+      "post": {
+        "summary": "Add Webhook",
+        "description": "\nWebhooks notify your application any time an event (e.g. Booking) happens on your account.\n#### Available webhooks\nThis endpoint can be used to register a webhook.\nCurrently we provide only one type of webhook that is triggered when a booking is successfully paid for a listing.\nOnce a webhook is successfully registered, we call the endpoint with the body constructed from the template registered (see Webhook templating section).\n#### Webhook templating\nWe provide a templating engine that allows you to get the information you need about your bookings, templating capabilities are available through the two elements; `url` and `body`.\nBoth can use the same set of variables to provide information about the booking that took place.\nFor example, you can declare the following template in the `body` element when creating a webhook callback.\n\n```xml\n<booking start='{{$.BookingStartDate}}' end='{{$.BookingEndDate}}'>\n<tenant>\n<email>{{$.TenantEmail}}</email>\n<name>{{$.TenantFirstName}} {{$.TenantLastName}}</name>\n</tenant>\n</booking>\n```\nOr you can use the `url` element like:\n```bash\nhttps://your-server.com/send/callback/here?bookingStart={{$.BookingStartDate}}&bookingEnd={{$.BookingEndDate}}&tenantEmail={{$.TenantEmail}}\n```\n#### Variables\nThe following variables are available for templating:\n* $.BookingStartDate (string)\n* $.BookingEndDate (string)\n* $.BookingPrice (int)\n* $.BookingDeposit (int)\n* $.BookingFee (int)\n* $.BookingTotal (int)\n* $.BookingCurrency (string)\n* $.BookingTenantsCount (int)\n* $.ListingAddress (string)\n* $.ListingStreet (string)\n* $.ListingHousenumber (string)\n* $.ListingNeighborhood (string)\n* $.ListingCity (string)\n* $.ListingZip (string)\n* $.TenantEmail (string)\n* $.TenantPhone (string)\n* $.TenantFirstName (string)\n* $.TenantLastName (string)\n* $.TenantGender (string)\n* $.ListingExternalReference (string)\n",
+        "tags": [
+          "Webhooks"
+        ],
+        "operationId": "addWebhook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook added successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Get all webhooks",
+        "description": "Get a list of all configuered webhooks",
+        "operationId": "getWebhooks",
+        "responses": {
+          "200": {
+            "description": "List webhooks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhooksGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/webhooks/{webhook_id}": {
+      "patch": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Update Webhook",
+        "description": "Update details of a specific webhook.",
+        "operationId": "patchWebhook",
+        "parameters": [
+          {
+            "name": "webhook_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the webhook to update",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookPatchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Patched successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookPatchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Delete Webhook",
+        "description": "Delete the spcified webhook",
+        "operationId": "deleteWebhook",
+        "parameters": [
+          {
+            "name": "webhook_id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the webhook to delete",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookDeleteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnAuthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "api_key"
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "Bad request or Malformed JSON",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      },
+      "UnAuthorized": {
+        "description": "Authorization error. API key is missing or invalid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Insufficient Permission",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "The specified resource was not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "description": "Wrong payload",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "description": "Something went wrong on server side",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Meta"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ListingData": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "1ErM5R2eZvKYlo2CoHFHzSQ0"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32",
+            "example": 56700
+          },
+          "pricingType": {
+            "$ref": "#/components/schemas/PricingType"
+          },
+          "monthlyPrices": {
+            "$ref": "#/components/schemas/MonthlyPrices"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/Kind"
+          },
+          "currencyCode": {
+            "type": "string",
+            "example": "EUR"
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description of the listing describing some of the properties."
+          },
+          "deposit": {
+            "$ref": "#/components/schemas/Deposit"
+          },
+          "estimatedBills": {
+            "deprecated": true,
+            "description": "This field has been deprecated in favor of `Costs` endpoints.",
+            "type": "integer",
+            "format": "int32",
+            "example": 5000
+          },
+          "minimumStayMonths": {
+            "type": "integer",
+            "format": "int32",
+            "example": 36
+          },
+          "maxBookableDays": {
+            "deprecated": true,
+            "type": "integer",
+            "format": "int32",
+            "example": 5
+          },
+          "moveInWindow": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          },
+          "currentOccupancy": {
+            "type": "integer",
+            "format": "int32",
+            "example": 3
+          },
+          "rules": {
+            "$ref": "#/components/schemas/Rules"
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int32",
+            "example": 23
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int32",
+            "example": 45
+          },
+          "preferredGender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "facilities": {
+            "$ref": "#/components/schemas/Facilities"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://www.housinganywhere.com/room/1234/nl/Rotterdam/someplace"
+          },
+          "extraData": {
+            "type": "string",
+            "example": "{\"extraField\": \"https://termsandconditions.com/uniqueId\"}"
+          },
+          "alias": {
+            "type": "string",
+            "example": "the-left-room",
+            "description": "An alternative way to the external reference field using which one can identify the property."
+          },
+          "externalReference": {
+            "type": "string",
+            "example": "partner-identifier",
+            "description": "An external identifier to make it easy for the partners to map listings across different systems"
+          },
+          "state": {
+            "$ref": "#/components/schemas/State"
+          },
+          "calendarOperations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalendarOperation"
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Image"
+            }
+          },
+          "costs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cost"
+            }
+          }
+        }
+      },
+      "ListingCreateRequest": {
+        "required": [
+          "address",
+          "type",
+          "kind",
+          "price",
+          "currencyCode",
+          "description"
+        ],
+        "properties": {
+          "price": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Price of the appartment in lowest denomination in given currency. e.g: Cents if currency is Euro",
+            "example": 56700
+          },
+          "pricingType": {
+            "$ref": "#/components/schemas/PricingType"
+          },
+          "monthlyPrices": {
+            "$ref": "#/components/schemas/MonthlyPrices"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency code of the currency used in ISO 4217 format.",
+            "example": "EUR"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/Kind"
+          },
+          "description": {
+            "type": "string",
+            "example": "Centrally located apartment, very close to public transport and supermarkets. It comes with a fully equipped kitchen with all cooking, cleaning appliances. Registration is possible. There is a parking spot directly in front of the building."
+          },
+          "deposit": {
+            "$ref": "#/components/schemas/Deposit"
+          },
+          "estimatedBills": {
+            "deprecated": true,
+            "type": "integer",
+            "format": "int32",
+            "description": " This field has been deprecated in favor of `Costs` endpoint.\n\nWhen any of `facilities.additionalCosts` is set to false (meaning that cost is not included in the rent), estimatedBill is expected to be higher than 0. This is because we want to make sure tenants have an estimation of the costs they may have if booking the accommodation. The number is purely informative and it does not affect the final price of the listing.\nThe value is in lowest denomination in given currency. e.g: Cents if currency is Euro ",
+            "example": 15000
+          },
+          "minimumStayMonths": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Mention if there is a minimum limit on the period of stay, for eg, the tenant has to stay at least 2 months.",
+            "example": 26
+          },
+          "maxBookableDays": {
+            "deprecated": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "This field denotes a time window in which the listing is bookable.",
+            "example": 30
+          },
+          "moveInWindow": {
+            "type": "integer",
+            "format": "int32",
+            "description": " Setting this field to greater than 0 creates a time window in which in the listing is bookable. If the first day available is `startDate` then the listing is bookable between `startDate` and `startDate + moveInWindow`. Setting it to 0 denotes no limit. ",
+            "example": 30
+          },
+          "currentOccupancy": {
+            "type": "integer",
+            "format": "int32",
+            "description": "The number of people currently living in the house. This is only applicable to properties that are shared apartments or shared rooms.",
+            "example": 2
+          },
+          "rules": {
+            "$ref": "#/components/schemas/Rules",
+            "description": "Specify rules that are applicable to the listing."
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int32",
+            "description": "If there is a minimum age applicable to the tenant, i.e., they have to be at least 18 years old.",
+            "example": 23
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int32",
+            "description": "If there is a maximum age applicable to the tenant, i.e., they have to be no older than 35 years.",
+            "example": 45
+          },
+          "preferredGender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "alias": {
+            "type": "string",
+            "example": "the-left-room"
+          },
+          "externalReference": {
+            "type": "string",
+            "example": "any-identifier"
+          },
+          "extraData": {
+            "type": "string",
+            "description": "A JSON field with extra information important for the listing which doesn't fit in other fields. Make sure to escape the quotes!",
+            "example": "{\"onBoardingLink\":\"https://termsandconditions.com/uniqueId\"}"
+          },
+          "facilities": {
+            "description": "Specify the facilities provided in the listing.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Facilities"
+              }
+            ],
+            "required": [
+              "totalSize",
+              "bedroomSize",
+              "kitchen",
+              "toilet",
+              "additionalCosts"
+            ]
+          },
+          "calendarOperations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalendarOperation"
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageRequest"
+            }
+          },
+          "costs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cost"
+            }
+          }
+        }
+      },
+      "ListingCreateResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "1ErM5R2eZvKYlo2CoHFHzSQ0"
+              }
+            }
+          }
+        }
+      },
+      "ListingUpdateRequest": {
+        "properties": {
+          "price": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Price of the appartment in lowest denomination in given currency. e.g: Cents if currency is Euro",
+            "example": 56700
+          },
+          "pricingType": {
+            "$ref": "#/components/schemas/PricingType"
+          },
+          "monthlyPrices": {
+            "$ref": "#/components/schemas/MonthlyPrices"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/Kind"
+          },
+          "description": {
+            "type": "string"
+          },
+          "deposit": {
+            "$ref": "#/components/schemas/Deposit"
+          },
+          "estimatedBills": {
+            "deprecated": true,
+            "type": "integer",
+            "format": "int32",
+            "description": " This field has been deprecated in favor of `Costs` endpoints.\n\nWhen any of `facilities.additionalCosts` is set to false (meaning that cost is not included in the rent), estimatedBill is expected to be higher than 0. This is because we want to make sure tenants have an estimation of the costs they may have if booking the accommodation. The number is purely informative and it does not affect the final price of the listing.\nThe value is in lowest denomination in given currency. e.g: Cents if currency is Euro ",
+            "example": 15000
+          },
+          "minimumStayMonths": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Mention if there is a minimum limit on the period of stay, for eg, the tenant has to stay at least 2 months.",
+            "example": 26
+          },
+          "maxBookableDays": {
+            "deprecated": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "This field denotes a time window in which the listing is bookable.",
+            "example": 30
+          },
+          "moveInWindow": {
+            "type": "integer",
+            "format": "int32",
+            "description": " Setting this field to greater than 0 creates a time window in which in the listing is bookable. If the first day available is `startDate` then the listing is bookable between `startDate` and `startDate + moveInWindow`. Setting it to 0 denotes no limit. ",
+            "example": 30
+          },
+          "currentOccupancy": {
+            "type": "integer",
+            "format": "int32",
+            "description": "The number of people currently living in the house. This is only applicable to properties that are shared apartments or shared rooms.",
+            "example": 2
+          },
+          "rules": {
+            "$ref": "#/components/schemas/Rules",
+            "description": "Specify rules that are applicable to the listing."
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int32",
+            "description": "If there is a minimum age applicable to the tenant, i.e., they have to be at least 18 years old.",
+            "example": 23
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int32",
+            "description": "If there is a maximum age applicable to the tenant, i.e., they have to be no older than 35 years.",
+            "example": 45
+          },
+          "preferredGender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "alias": {
+            "type": "string",
+            "example": "the-left-room"
+          },
+          "externalReference": {
+            "type": "string",
+            "example": "any-identifier"
+          },
+          "extraData": {
+            "type": "string",
+            "description": "A JSON field with extra information important for the listing which doesn't fit in other fields. Make sure to escape the quotes!",
+            "example": "{\"onBoardingLink\":\"https://termsandconditions.com/uniqueId\"}"
+          },
+          "facilities": {
+            "$ref": "#/components/schemas/Facilities"
+          }
+        }
+      },
+      "ListingUpdateResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ListingData"
+          }
+        }
+      },
+      "ListingsGetResponse": {
+        "required": [
+          "meta",
+          "data",
+          "pagination"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListingData"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        }
+      },
+      "ListingDeleteResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "1ErM5R2eZvKYlo2CoHFHzSQ0"
+              }
+            }
+          }
+        }
+      },
+      "ListingImagesGetResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "images": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListingImagesCreateRequest": {
+        "required": [
+          "images"
+        ],
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageRequest"
+            }
+          }
+        }
+      },
+      "ListingImagesCreateResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "msg": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListingImagesUpdateRequest": {
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageUpdateRequest"
+            }
+          },
+          "order": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "RD-GLmyrSFGC0wtv01cHfQ"
+            }
+          }
+        }
+      },
+      "ListingImagesUpdateResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "images": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListingImagesDeleteRequest": {
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "RD-GLmyrSFGC0wtv01cHfQ"
+            }
+          },
+          "all": {
+            "type": "bool",
+            "example": false
+          }
+        }
+      },
+      "ListingImagesDeleteResponse": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
+      "ListingShowHideResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "1ErM5R2eZvKYlo2CoHFHzSQ0"
+              }
+            }
+          }
+        }
+      },
+      "ListingCalOpsGetResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "calendarOperations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CalendarOperation"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListingCalOpsUpdateRequest": {
+        "properties": {
+          "calendarOperations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalendarOperation"
+            }
+          }
+        }
+      },
+      "ListingCalOpsUpdateResponse": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
+      "ListingCostsGetResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "costs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Cost"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListingCostsUpdateRequest": {
+        "properties": {
+          "costs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cost"
+            }
+          }
+        }
+      },
+      "ListingCostsUpdateResponse": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
+      "WebhooksGetResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhooksData"
+            }
+          }
+        }
+      },
+      "WebhookCreateRequest": {
+        "required": [
+          "url",
+          "method",
+          "contentType",
+          "type",
+          "reportEmail"
+        ],
+        "properties": {
+          "url": {
+            "$ref": "#/components/schemas/WebhookURL"
+          },
+          "method": {
+            "description": "The HTTP method to use: GET or POST.",
+            "$ref": "#/components/schemas/WebhooksMethods"
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/WebhooksContentTypes"
+          },
+          "type": {
+            "$ref": "#/components/schemas/WebhookType"
+          },
+          "body": {
+            "$ref": "#/components/schemas/WebhookBody"
+          },
+          "reportEmail": {
+            "$ref": "#/components/schemas/WebhookReportEmail"
+          },
+          "auth": {
+            "$ref": "#/components/schemas/WebhooksAuth"
+          }
+        }
+      },
+      "WebhookCreateResponse": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhooksData"
+            }
+          }
+        }
+      },
+      "WebhookPatchRequest": {
+        "properties": {
+          "url": {
+            "$ref": "#/components/schemas/WebhookURL"
+          },
+          "method": {
+            "$ref": "#/components/schemas/WebhooksMethods"
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/WebhooksContentTypes"
+          },
+          "type": {
+            "$ref": "#/components/schemas/WebhookType"
+          },
+          "body": {
+            "$ref": "#/components/schemas/WebhookBody"
+          },
+          "reportEmail": {
+            "$ref": "#/components/schemas/WebhookReportEmail"
+          },
+          "auth": {
+            "$ref": "#/components/schemas/WebhooksAuth"
+          }
+        }
+      },
+      "WebhookPatchResponse": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
+      "WebhookDeleteRequest": {
+        "required": [
+          "webhook_id"
+        ]
+      },
+      "WebhookDeleteResponse": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
+      "Address": {
+        "description": "The address of the listing by the house number, street, city, state, postal code and the country code.",
+        "required": [
+          "housenumber",
+          "street",
+          "city",
+          "postalCode",
+          "countryCode"
+        ],
+        "properties": {
+          "housenumber": {
+            "type": "string",
+            "example": "81A",
+            "description": "The house number."
+          },
+          "street": {
+            "type": "string",
+            "example": "Oostplein",
+            "description": "Name of the street the listing is located on."
+          },
+          "city": {
+            "type": "string",
+            "example": "Rotterdam",
+            "description": "The city the listing is located in."
+          },
+          "state": {
+            "type": "string",
+            "example": "South-Holland",
+            "description": "The state the listing is located in."
+          },
+          "postalCode": {
+            "type": "string",
+            "example": "3071VN",
+            "description": "The postal code of the listing, this is the same as pincode/zipcode in certain regions."
+          },
+          "neighborhood": {
+            "type": "string",
+            "example": "Oostplein Metro Station",
+            "description": "If the neighborhood is known by a specific name, such as 'downtown' or 'city center'."
+          },
+          "countryCode": {
+            "type": "string",
+            "example": "NL",
+            "description": "The two letter code for the country specified by ISO 3166-1 standards."
+          }
+        }
+      },
+      "Type": {
+        "type": "integer",
+        "example": 1,
+        "enum": [
+          "House = 1",
+          "Building = 2",
+          "Apartment = 3"
+        ]
+      },
+      "Kind": {
+        "type": "integer",
+        "example": 1,
+        "enum": [
+          "EntirePlace = 1",
+          "PrivateRoom = 2",
+          "SharedRoom = 3"
+        ]
+      },
+      "PricingType": {
+        "type": "integer",
+        "example": 1,
+        "enum": [
+          "Flat = 1",
+          "Monthly = 2"
+        ]
+      },
+      "MonthlyPrices": {
+        "name": "monthylPrices",
+        "description": "Listing prices on a monthly basis. Field is required when `pricingType` is set to `Monthly` i.e `2`. Values for all twelve months should be given.",
+        "type": "object",
+        "additionalProperties": {
+          "x-additionalPropertiesName": "monthlyPrices",
+          "title": "price",
+          "type": "int32",
+          "description": "month's price in cents"
+        },
+        "example": {
+          "1": 120000,
+          "2": 80000,
+          "3": 90000,
+          "4": 100000,
+          "5": 90000,
+          "6": 85000,
+          "7": 89000,
+          "8": 89000,
+          "9": 70000,
+          "10": 60000,
+          "11": 60000,
+          "12": 75000
+        }
+      },
+      "State": {
+        "type": "string",
+        "example": "published",
+        "enum": [
+          "draft",
+          "published",
+          "unpublished"
+        ]
+      },
+      "Allowed": {
+        "type": "string",
+        "enum": [
+          "no",
+          "yes",
+          "discussable",
+          "outsideOnly"
+        ],
+        "description": "If not provided, this field will be presented as not set in the UI."
+      },
+      "Access": {
+        "type": "string",
+        "enum": [
+          "no",
+          "shared",
+          "private"
+        ]
+      },
+      "Sharing": {
+        "type": "string",
+        "enum": [
+          "no",
+          "private",
+          "withBoys",
+          "withGirls",
+          "withBoth"
+        ]
+      },
+      "Gender": {
+        "type": "string",
+        "enum": [
+          "male",
+          "female",
+          "other"
+        ],
+        "description": "This will be shown as `No Preference` in the UI when no value is set."
+      },
+      "HouseMates": {
+        "type": "string",
+        "enum": [
+          "boys",
+          "girls",
+          "mixed"
+        ],
+        "description": "If not provided, this field will be presented as not set in the UI."
+      },
+      "CalendarOperationType": {
+        "type": "integer",
+        "example": 1,
+        "enum": [
+          "MarkAvailable = 0",
+          "MarkUnavailable = 1"
+        ]
+      },
+      "TenantOccupation": {
+        "type": "string",
+        "enum": [
+          "working",
+          "student",
+          "workingStudent",
+          "lookingForJob"
+        ],
+        "description": "This will be shown as `Any` in the UI when no value is set."
+      },
+      "Flooring": {
+        "type": "string",
+        "enum": [
+          "laminate",
+          "carpet",
+          "store",
+          "wood",
+          "plastic",
+          "other"
+        ],
+        "description": "If not provided, this field will be presented as not set in the UI."
+      },
+      "Heating": {
+        "type": "string",
+        "enum": [
+          "na",
+          "central",
+          "gas",
+          "woodStove",
+          "electrical"
+        ],
+        "description": "If not provided, this field will be presented as not set in the UI."
+      },
+      "callContentType": {
+        "type": "string",
+        "enum": [
+          "text/plain",
+          "application/x-www-form-urlencoded",
+          "application/json",
+          "application/xml"
+        ]
+      },
+      "Deposit": {
+        "deprecated": true,
+        "type": "integer",
+        "format": "int32",
+        "description": " This field has been deprecated in favor of `Costs` endpoints.\n\nSecurity Deposit of the appartment in lowest denomination in given currency. e.g: Cents if currency is Euro. If not provided, this field will be presented as not set in the UI. ",
+        "example": 24000
+      },
+      "Facilities": {
+        "properties": {
+          "allergyFriendly": {
+            "type": "boolean",
+            "description": "If the place is allergens free or not.",
+            "default": false
+          },
+          "housematesGender": {
+            "$ref": "#/components/schemas/HouseMates"
+          },
+          "registrationPossible": {
+            "type": "boolean",
+            "description": "If the tenant can register at the address with the municipality.",
+            "default": false
+          },
+          "tenantStatus": {
+            "$ref": "#/components/schemas/TenantOccupation",
+            "description": "If required, occupational status of the tenant."
+          },
+          "freePlaces": {
+            "type": "integer",
+            "example": 3,
+            "description": " Number of places available for the listing. This Number is just informative and does not have any impact on the booking. If not provided, this field will be presented as not set in the UI. "
+          },
+          "bedrooms": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of bedrooms in the listing.",
+            "example": 3
+          },
+          "bedroomFurnished": {
+            "type": "boolean",
+            "description": " True, if the bedroom is furnished. If not provided, this field will be presented as not set in the UI. ",
+            "default": false
+          },
+          "bedroomSize": {
+            "type": "integer",
+            "format": "int32",
+            "description": "The size of the bedroom being rented out. Not applicable for complete apartments or houses, only private/shared rooms.",
+            "example": 60
+          },
+          "bedroomLock": {
+            "type": "boolean",
+            "description": " True if there is a lock on the private bedroom door. If not provided, this field will be presented as not set in the UI. "
+          },
+          "balconyTerrace": {
+            "$ref": "#/components/schemas/Access",
+            "description": " If there is a balcony or terrace in the listing. If not provided, this field will be presented as not set in the UI. "
+          },
+          "basement": {
+            "$ref": "#/components/schemas/Access",
+            "description": " Whether the listing has a shared, private basement or none. If not provided, this field will be presented as not set in the UI. "
+          },
+          "bathroom": {
+            "$ref": "#/components/schemas/Sharing"
+          },
+          "garden": {
+            "$ref": "#/components/schemas/Access",
+            "description": "If not provided, this field will be presented as not set in the UI."
+          },
+          "kitchen": {
+            "$ref": "#/components/schemas/Access"
+          },
+          "livingRoom": {
+            "$ref": "#/components/schemas/Access",
+            "description": "If not provided, this field will be presented as not set in the UI."
+          },
+          "parking": {
+            "$ref": "#/components/schemas/Access",
+            "description": "If not provided, this field will be presented as not set in the UI."
+          },
+          "toilet": {
+            "$ref": "#/components/schemas/Access"
+          },
+          "totalSize": {
+            "type": "integer",
+            "format": "int32",
+            "example": 80,
+            "description": "This is the total area of the listing (apartment or house) in square meters, including all private and shared spaces."
+          },
+          "wheelchairAccessible": {
+            "type": "boolean",
+            "description": " If the space is accessible to people with disabilities. (e.g. presence of ramps, elevators etc..) If not provided, this field will be presented as not set in the UI. ",
+            "default": false,
+            "example": true
+          },
+          "airConditioning": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "bed": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "closet": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "desk": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "dishwasher": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "dryer": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "internet": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "roomFurniture": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "tv": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "washingMachine": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "wifi": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "flooring": {
+            "$ref": "#/components/schemas/Flooring"
+          },
+          "heating": {
+            "$ref": "#/components/schemas/Heating"
+          },
+          "kitchenware": {
+            "$ref": "#/components/schemas/Access"
+          },
+          "additionalCosts": {
+            "$ref": "#/components/schemas/AdditionalCosts"
+          }
+        }
+      },
+      "CalendarOperation": {
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CalendarOperationType"
+          },
+          "dateFrom": {
+            "type": "string",
+            "description": "Date in ISO 8601 compliant with format YYYY-MM-DD",
+            "example": "2019-05-29"
+          },
+          "dateTo": {
+            "type": "string",
+            "description": "Date in ISO 8601 compliant with format YYYY-MM-DD",
+            "example": "2020-07-29"
+          }
+        }
+      },
+      "Cost": {
+        "required": [
+          "type",
+          "value",
+          "payableAt",
+          "payableBy",
+          "refundable",
+          "estimated",
+          "mandatory"
+        ],
+        "properties": {
+          "type": {
+            "required": true,
+            "$ref": "#/components/schemas/CostType"
+          },
+          "value": {
+            "type": "integer",
+            "description": "Price in cents. Should be 0 when `payableBy` is not set to `tenant`",
+            "example": "8000"
+          },
+          "payableAt": {
+            "$ref": "#/components/schemas/PayableAt"
+          },
+          "payableBy": {
+            "$ref": "#/components/schemas/PayableBy"
+          },
+          "refundable": {
+            "type": "boolean",
+            "description": "Select if the cost will be paid back. The default value is `false`."
+          },
+          "estimated": {
+            "type": "boolean",
+            "description": "Select if the value of the cost is approximate or exact. The default value is `false`.",
+            "example": false
+          },
+          "mandatory": {
+            "type": "boolean",
+            "description": "Select if the associated cost is required and the tenant is obligated to pay for it. The default value is `false`."
+          }
+        }
+      },
+      "CostType": {
+        "type": "string",
+        "enum": [
+          "security-deposit",
+          "bedding-deposit",
+          "towel-deposit",
+          "other-deposit",
+          "administration-fee",
+          "utility-bills",
+          "water-bill",
+          "gas-bill",
+          "electricity-bill",
+          "internet-bill",
+          "final-cleaning",
+          "cleaning-service",
+          "overnight-guests",
+          "other-optional-costs",
+          "early-move-in",
+          "late-move-in",
+          "late-move-out"
+        ]
+      },
+      "PayableBy": {
+        "type": "string",
+        "enum": [
+          "tenant",
+          "included-in-rent",
+          "not-applicable"
+        ]
+      },
+      "PayableAt": {
+        "type": "string",
+        "enum": [
+          "move-in",
+          "move-out",
+          "one-off",
+          "monthly",
+          "bi-weekly",
+          "weekly"
+        ]
+      },
+      "Image": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "example": "ready",
+            "description": "The image state can be `ready`, `pending` or `failed`."
+          },
+          "url": {
+            "type": "string"
+          },
+          "rotation": {
+            "type": "integer"
+          }
+        }
+      },
+      "ImageRequest": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "example": "https://via.placeholder.com/300"
+          }
+        }
+      },
+      "ImageUpdateRequest": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "Ar8ekXJWSOGGWbTefL65aA"
+          },
+          "rotateAbs": {
+            "type": "integer",
+            "example": 90
+          },
+          "rotateIncr": {
+            "type": "integer",
+            "example": 30
+          }
+        }
+      },
+      "Rules": {
+        "properties": {
+          "pets": {
+            "$ref": "#/components/schemas/Allowed"
+          },
+          "cleaningCommonRoomsIncluded": {
+            "description": " True, if the common areas’ cleaning fee is included in the rent. False, if not. If not provided, this field will be presented as not set in the UI. ",
+            "type": "boolean"
+          },
+          "cleaningPrivateRoomIncluded": {
+            "description": " True, if the private space that is being rented is included in the rent. False, if not. If not provided, this field will be presented as not set in the UI. ",
+            "type": "boolean"
+          },
+          "playMusic": {
+            "description": "If playing musical instruments is allowed or not.",
+            "$ref": "#/components/schemas/Allowed"
+          },
+          "smoking": {
+            "description": "If smoking is allowed or not.",
+            "$ref": "#/components/schemas/Allowed"
+          },
+          "couple": {
+            "description": " If couples are allowed or not. If not provided, this field will be presented as not set in the UI. ",
+            "type": "boolean"
+          }
+        }
+      },
+      "AdditionalCosts": {
+        "deprecated": true,
+        "description": " This field has been deprecated in favor of `Costs` endpoints.\n\nSet to true when these costs are included in the rent. ",
+        "properties": {
+          "water": {
+            "type": "boolean"
+          },
+          "gas": {
+            "type": "boolean"
+          },
+          "electricity": {
+            "type": "boolean"
+          },
+          "internet": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Meta": {
+        "properties": {
+          "status": {
+            "type": "integer",
+            "example": "2xx"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Pagination": {
+        "properties": {
+          "nextCursor": {
+            "type": "string",
+            "example": "3450"
+          },
+          "count": {
+            "type": "integer",
+            "example": 20
+          }
+        }
+      },
+      "Error": {
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "WebhooksData": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "1ErM5R2eZvKYlo2CoHFHzSQ0"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "If the webhook is active or inactive."
+          },
+          "method": {
+            "$ref": "#/components/schemas/WebhooksMethods"
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/WebhooksContentTypes"
+          },
+          "type": {
+            "$ref": "#/components/schemas/WebhookType"
+          },
+          "url": {
+            "$ref": "#/components/schemas/WebhookURL"
+          },
+          "auth": {
+            "$ref": "#/components/schemas/WebhooksAuth"
+          },
+          "reportEmail": {
+            "$ref": "#/components/schemas/WebhookReportEmail"
+          }
+        }
+      },
+      "WebhooksMethods": {
+        "description": "The HTTP method to use: GET or POST.",
+        "type": "int32",
+        "example": 2,
+        "enum": [
+          "GET = 1",
+          "POST = 2"
+        ]
+      },
+      "WebhooksContentTypes": {
+        "type": "int32",
+        "example": 3,
+        "enum": [
+          "text/plain = 1",
+          "application/x-www-form-urlencoded = 2",
+          "application/json = 3"
+        ]
+      },
+      "WebhookType": {
+        "description": "The webhook you want to add a callback for.",
+        "type": "int32",
+        "example": 0,
+        "enum": [
+          "AFTER_BOOKING_PAID = 0"
+        ]
+      },
+      "WebhooksAuth": {
+        "description": "Credentials for HTTP Basic Authentication if enabled on the callback URL.",
+        "properties": {
+          "user": {
+            "type": "string",
+            "example": "username",
+            "description": "The username for HTTP Basic Authentication"
+          },
+          "password": {
+            "type": "string",
+            "example": "myP4$$",
+            "description": "The password for HTTP Basic Authentication"
+          }
+        }
+      },
+      "WebhookReportEmail": {
+        "type": "string",
+        "description": "This email address will receive a notification if a problem occurs in the webhook callback.",
+        "example": "support@your-server.com"
+      },
+      "WebhookBody": {
+        "type": "string",
+        "description": "The body of the webhook callback, used only if `method` is POST.",
+        "example": "{ \"tenant_email\": \"`{{$.TenantEmail}}`\", \"booking_price\": \"`{{$.BookingPrice}}`\", \"booking_start_date\": \"`{{$.BookingStartDate}}`\", \"booking_end_date\": \"`{{$.BookingEndDate}}`\" }"
+      },
+      "WebhookURL": {
+        "type": "string",
+        "description": "The URL for the webhook callback, http and https are both allowed.",
+        "example": "https://your-server.com/send/callback/here"
+      }
+    }
+  }
+}

@@ -9,34 +9,69 @@
 </head>
 <body>
     <header>
-        <h1 class="page-title">Home Sweet Home</h1>
+        <h1 class="page-title">Home-Sweet-Home</h1>
             <!--Dropdown for no. of bedrooms-->
-            <select name="bedrooms" id="bedrooms" class="select-dropdown">
-                <option value="" disabled selected>Choose the number of bedrooms</option>
-                <option value="1">1 Bedroom</option>
-                <option value="2">2 Bedrooms</option>
-                <option vlaue="3+">3+ Bedrooms</option>
+            <select name="state" id="state" class="select-dropdown">
+                <option value="" disabled selected>Choose which state you are looking into</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">Califronia</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IO">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NH">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SD">South Dakota</option>
+                <option value="SC">South Carolina</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
             </select>
-            <!--Dropdown for no. of bathrooms-->
-            <select name="bathrooms" id="bathrooms" class="select-dropdown">
-                <option value="" disabled selected>Choose the number of bathrooms</option>
-                <option value="1">1 Bathroom</option>
-                <option value="2">2 Bathroom</option>
-                <option value="3+">3+ Bathrooms</option>
-            </select>
-            <!--Dropdown for preferred service(i.e. Airbnb, Apartments.com, etc.)-->
-            <select name="service" id="service" class="select-dropdown">
-                <option value="" disabled selected>Choose your preferred service</option>
-                <option value="Airbnb">Airbnb</option>
-                <option value="Zillow">Zillow</option>
-            </select>
+            
             <!--Input box for zip code-->
             <input type="text" name="zip-code" placeholder="Enter Zip Code" />
             <!--Submit Button-->
             <button class="btn" id="submit-input" type="submit">Submit</button>
     </header>
     <main>
-        <!--modal-->
+        
     </main>
     <!--Contact section-->
     <div class="contact-info">
@@ -57,6 +92,11 @@
             </address>
 
         </div>
+    </div>
+
+    <!--Modal-->
+    <div class="modal fade" id="card-modal" tabindex="-1" role="dialog" aria-labelledby="card-modal" aria-hidden="true">
+        <div class=""></div>
     </div>
     <script src="./assets/scripts/script.js"></script>
 </body>

@@ -10,6 +10,9 @@
 <body>
     <header>
         <h1 class="page-title">Home-Sweet-Home</h1>
+
+        <form id="COVID-search-form">
+            <input type="text" id="cityName"/>
             <!--Dropdown for no. of bedrooms-->
             <select name="state" id="state" class="select-dropdown">
                 <option value="" disabled selected>Choose which state you are looking into</option>
@@ -17,7 +20,7 @@
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
                 <option value="AR">Arkansas</option>
-                <option value="CA">Califronia</option>
+                <option value="CA">California</option>
                 <option value="CO">Colorado</option>
                 <option value="CT">Connecticut</option>
                 <option value="DE">Delaware</option>
@@ -70,9 +73,10 @@
             <input type="text" id="longitude" name="longitude" placeholder="Enter Longitude" />
             <!--Submit Button-->
             <button class="btn" id="submit-input" type="submit">Submit</button>
+        </form>
     </header>
     <main>
-        
+        <div id="data-insert"></div>
     </main>
     <!--Contact section-->
     <div class="contact-info">

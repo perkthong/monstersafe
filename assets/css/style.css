@@ -1,0 +1,15 @@
+body {
+    background-color: #117864;
+}
+
+.page-title {
+font-family: cursive;
+font-size: 55px;
+text-align: center;
+}
+
+.contact-info {
+    border-radius: 3px;
+    margin-right: 0%;
+    padding-left: 3px;
+}

@@ -1,15 +1,24 @@
 body {
-    background-color: #117864;
+    background-color: #50fff1;
 }
 
 .page-title {
-font-family: cursive;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 55px;
 text-align: center;
 }
 
+.descrp {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.drop {
+    display: flex;
+    justify-content: center;
+}
+
 .contact-info {
-    border-radius: 3px;
-    margin-right: 0%;
-    padding-left: 3px;
+    padding-left: 15px;
+    text-align: right;
 }

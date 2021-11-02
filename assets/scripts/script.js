@@ -7,10 +7,10 @@ document
     event.preventDefault();
 
     const cityName = document.querySelector("#cityName").value;
-    const stateName = document.querySelector("#stateName").value;
+    const stateName = document.querySelectorAll("#state").value;
 
     fetch(
-      `https://covid-19-statistics.p.rapidapi.com/reports?city_name=${cityName}`,
+      `https://covid-19-statistics.p.rapidapi.com/reports?city_name=${cityName}&${stateName}`,
       {
         method: "GET",
         headers: {
@@ -39,7 +39,7 @@ document
                 </div>
             `;
         });
-
+        console.log(template);
         document.querySelector("#data-insert").innerHTML = template;
 
       })
@@ -49,11 +49,9 @@ document
     //    // collect form data
   });
 
-const state = document.querySelector("#state").value;
-const latitude = document.querySelector("#latitude").value;
-const longitude = document.querySelector("#longitude").value;
+// const state = document.querySelector("#state").value;
 
-console.log(state, latitude, longitude);
+// console.log(state, latitude, longitude);
 // state = province
 //latitude = lat
 // longitude = long

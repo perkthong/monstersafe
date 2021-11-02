@@ -7,8 +7,8 @@ document
     event.preventDefault();
 
     const cityName = document.querySelector("#cityName").value;
-    const stateName = document.querySelector("#stateName").value;
-
+    const stateName = document.querySelectorAll(".state").value;
+    console.log(stateName);
     fetch(
       `https://covid-19-statistics.p.rapidapi.com/reports?city_name=${cityName}`,
       {

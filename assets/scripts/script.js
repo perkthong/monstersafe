@@ -8,14 +8,14 @@ document
 
     function myFunction() {
       var state = document.getElementById("state");
-      document.getElementById("data-insert").vaule =
+      document.getElementById("state").value =
     state.options[selectedIndex].text;
     }
 
-    const stateName = document.getElementById("#stateIntial").value;
+    // const state = document.getElementById("#stateIntial").value;
 
     fetch(
-      `https://api.covidactnow.org/v2/state/TX.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
+      `https://api.covidactnow.org/v2/state/AL.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
       // {
       //   method: "GET",
       //   headers: {
@@ -40,16 +40,16 @@ document
         // let template = "";
         // data.data.forEach((datum) => {
         //     template += `
-        //         <div>
-        //             <h3>State</h3>
-        //             <p>State: ${datum.province}</p>
-        //             <p>Death: ${datum.deaths}</p>
-        //             <p>Recovered: ${datum.recovered}</p>
-        //             <h3>City</h3>
-        //             <p>City Name: ${datum.region.cities[0].name}</p>
-        //             <p>Death: ${datum.region.cities[0].deaths}</p>
-        //             <p>Recovered: ${datum.region.cities[0].recovered}</p>
-        //         </div>
+                // <div>
+                //     <h3>State</h3>
+                //     <p>State: ${datum.province}</p>
+                //     <p>Death: ${datum.deaths}</p>
+                //     <p>Recovered: ${datum.recovered}</p>
+                //     <h3>City</h3>
+                //     <p>City Name: ${datum.region.cities[0].name}</p>
+                //     <p>Death: ${datum.region.cities[0].deaths}</p>
+                //     <p>Recovered: ${datum.region.cities[0].recovered}</p>
+                // </div>
         //     `;
         // });
         // console.log(template);

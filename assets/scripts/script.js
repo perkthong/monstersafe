@@ -1,44 +1,54 @@
-// // java script - header - sticky header - 4 drop down menus
-// fetch('https://streetviewpublish.googleapis.com/$discovery/rest?version=v1')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-// fetch('https://api.bridgedataoutput.com/api/v2/OData/test/Property?access_token=6baca547742c6f96a6ff71b138424f21')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-// fetch('https://api.housinganywhere.com/v1')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-
-
 //   document.querySelector("#form").addEventListener("submit", (event) => {
 //     event.preventDefault();
 
-//     // collect form data
-const bedroom = document.querySelector("#bedrooms").value;
-const bathrooms = document.querySelector("#bathrooms").value;
-const services = document.querySelector("#service").value;
-const zip = document.querySelector("#zip").value;
+document
+  .querySelector("#COVID-search-form")
+  .addEventListener("submit", (event) => {
+    event.preventDefault();
 
-console.log(bedroom,bathrooms,services,zip)
-//     // use the data to construct a url query .then()
+    const cityName = document.querySelector("#cityName").value;
+    const stateName = document.querySelectorAll("#state").value;
 
-//         //do stuff with data
+    fetch('https://api.covidactnow.org/v2/states.json?apiKey=6e6605a3a3144a6db2a79a287aedd41d')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("*****", data.data);
 
+        let template = "";
+        data.data.forEach((datum) => {
+            template += `
+                <div>
+                    <h3>State</h3>
+                    <p>State: ${datum.province}</p>
+                    <p>Death: ${datum.deaths}</p>
+                    <p>Recovered: ${datum.recovered}</p>
+                    <h3>City</h3>
+                    <p>City Name: ${datum.region.cities[0].name}</p>
+                    <p>Death: ${datum.region.cities[0].deaths}</p>
+                    <p>Recovered: ${datum.region.cities[0].recovered}</p>
+                </div>
+            `;
+        });
+        console.log(template);
+        document.querySelector("#data-insert").innerHTML = template;
+
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    //    // collect form data
+  });
+
+// const state = document.querySelector("#state").value;
+
+// console.log(state, latitude, longitude);
+// state = province
+//latitude = lat
+// longitude = long
+//cities {name:""}
+
+// variables for each state value equal to the state name
+// user inputs their lat long
+// compare to the lat and long of the nearest county
+// show in main
 //   });;
-
-
-fetch("https://covid-19-statistics.p.rapidapi.com/reports?region_name=US&q=US%20California", {
-"method": "GET",
-"headers": {
-    "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
-    "x-rapidapi-key": "50bfd5e59dmsh8c894a8811452bep172e1ejsnbaab7a0b6b6b"
-}
-})
-.then(response => response.json())
-.then(data =>{
-console.log(data)
-})
-.catch(err => {
-console.error(err);
-});
-

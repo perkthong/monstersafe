@@ -6,10 +6,10 @@ document
   .addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const stateName = document.querySelectorAll("#state").value;
+    const stateName = document.querySelectorAll("#stateInitial").value;
 
     fetch(
-      `https://api.covidactnow.org/v2/states.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
+      `https://api.covidactnow.org/v2/state/TX.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
       // {
       //   method: "GET",
       //   headers: {

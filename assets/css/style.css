@@ -8,17 +8,12 @@ font-size: 55px;
 text-align: center;
 }
 
-.descrp {
-    text-align: center;
-    text-transform: capitalize;
-}
-
-.select-dropdown {
+.button {
     display: flex;
     justify-content: center;
 }
 
 .contact-info {
-    padding-left: 15px;
+    padding-right: 15px;
     text-align: right;
 }

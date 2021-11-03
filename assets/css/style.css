@@ -2,23 +2,38 @@ body {
     background-color: #00eee0;
 }
 
-.page-title {
+.hero-body {
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 55px;
 text-align: center;
+background-color: #00eee0;
+border: double;
+border-radius: 15%;
 }
 
-.descrp {
+#data-insert {
+    padding-left: 45px;
+}
+
+label {
     text-align: center;
-    text-transform: capitalize;
 }
 
-.drop {
+.travel {
+    padding-left: 25px;
+}
+
+.travel2 {
+    padding-left: 35px;
+}
+
+.control {
     display: flex;
     justify-content: center;
 }
 
 .contact-info {
-    padding-left: 15px;
+    padding-right: 15px;
     text-align: right;
+    border-style: inset;
 }

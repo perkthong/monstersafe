@@ -13,7 +13,7 @@ text-align: center;
     text-transform: capitalize;
 }
 
-.drop {
+.select-dropdown {
     display: flex;
     justify-content: center;
 }

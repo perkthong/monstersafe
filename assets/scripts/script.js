@@ -9,14 +9,14 @@ document
     const stateName = document.querySelectorAll("#state").value;
 
     fetch(
-      `https://api.covidactnow.org/v2/state/${stateName}.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
-      {
-        method: "GET",
-        headers: {
-          "host": "api.covidactnow.org",
-          "api-key": "bf076c55a54247e998486f5cc1ba1acc"
-        }
-      }
+      `https://api.covidactnow.org/v2/states.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
+      // {
+      //   method: "GET",
+      //   headers: {
+      //     "host": "api.covidactnow.org",
+      //     "api-key": "bf076c55a54247e998486f5cc1ba1acc"
+      //   }
+      // }
     //   //`https://covid-19-statistics.p.rapidapi.com/reports?city_name=${cityName}&${stateName}`,
     //   //{
     //   //  method: "GET",
@@ -26,11 +26,11 @@ document
     //         "50bfd5e59dmsh8c894a8811452bep172e1ejsnbaab7a0b6b6b",
     //     },
     //   }
-    // )
+      )
       .then((response) => response.json())
       .then((data) => {
-        console.log("*****", data.data);
-
+        console.log(data);
+        // console.log("*****", data.data);
         // let template = "";
         // data.data.forEach((datum) => {
         //     template += `
@@ -54,7 +54,7 @@ document
         console.error(err);
       })
     //    // collect form data
-    )};
+  });
 
 // const state = document.querySelector("#state").value;
 

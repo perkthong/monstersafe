@@ -7,10 +7,12 @@ document
     event.preventDefault();
 
     function myFunction() {
-      var state = document.getElementById("state");
+    var stateInitial = document.getElementById("state");
       document.getElementById("state").value =
-    state.options[selectedIndex].text;
+    state.options[state.selectedIndex].text;
     }
+    console.log("*****",state);
+    
 
     // const state = document.getElementById("#stateIntial").value;
 

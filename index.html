@@ -12,68 +12,89 @@
     <header>
         <h1 class="page-title">Home-Sweet-Home</h1>
             <h2>Enter the state and global coordinates you want to find COVID information on.</h2>
-            <!--Dropdown for US states-->
+            <!--COVID-Search Form-->
             <form id=COVID-search-form>
-
-                <input type="text" id="cityName"/>
-                <select name="state" id="state" class="select-dropdown">
-                    <option value="" disabled selected>Choose which state you are looking into</option>
-                    <option value="Alabama" id="Alabama">Alabama</option>
-                    <option value="Alaska" id="Alaska">Alaska</option>
-                    <option value="Arizona" id="Arizona">Arizona</option>
-                    <option value="Arkansas" id="Arkansas">Arkansas</option>
-                    <option value="California" id="California">California</option>
-                    <option value="Colorado" id="Colorado">Colorado</option>
-                    <option value="Connecticut" id="Connecticut">Connecticut</option>
-                    <option value="Delaware" id="Delaware">Delaware</option>
-                    <option value="Florida" id="Florida">Florida</option>
-                    <option value="Georgia" id="Georgia">Georgia</option>
-                    <option value="Hawaii" id="Hawaii">Hawaii</option>
-                    <option value="Idaho" id="Idaho">Idaho</option>
-                    <option value="Illinois" id="Illinois">Illinois</option>
-                    <option value="Indiana" id="Indiana">Indiana</option>
-                    <option value="Iowa" id="Iowa">Iowa</option>
-                    <option value="Kansas" id="Kansas">Kansas</option>
-                    <option value="Kentucky" id="Kentucky">Kentucky</option>
-                    <option value="Louisiana" id="Louisiana">Louisiana</option>
-                    <option value="Maine" id="Maine">Maine</option>
-                    <option value="Maryland" id="Maryland">Maryland</option>
-                    <option value="Massachusetts" id="Massachusetts">Massachusetts</option>
-                    <option value="Michigan" id="Michigan">Michigan</option>
-                    <option value="Minnesota" id="Minnesota">Minnesota</option>
-                    <option value="Mississippi" id="Mississippi">Mississippi</option>
-                    <option value="Missouri" id="Missouri">Missouri</option>
-                    <option value="Montana" id="Montana">Montana</option>
-                    <option value="Nebraska" id="Nebraska">Nebraska</option>
-                    <option value="Nevada" id="Nevada">Nevada</option>
-                    <option value="New Hampshire" id="New Hampshire">New Hampshire</option>
-                    <option value="New Jersey" id="New Jersey">New Jersey</option>
-                    <option value="New Mexico" id="New Mexico">New Mexico</option>
-                    <option value="NY" id="New York">New York</option>
-                    <option value="North Carolina" id="North Carolina">North Carolina</option>
-                    <option value="North Dakota" id="North Dakota">North Dakota</option>
-                    <option value="Ohio" id="Ohio">Ohio</option>
-                    <option value="Oklahoma" id="Oklahoma">Oklahoma</option>
-                    <option value="Oregon" id="Oregon">Oregon</option>
-                    <option value="Pennsylvania" id="Pennsylvania">Pennsylvania</option>
-                    <option value="Rhode Island" id="Rhode Island">Rhode Island</option>
-                    <option value="South Dakota" id="South Dakota">South Dakota</option>
-                    <option value="South Carolina" id="South Carolina">South Carolina</option>
-                    <option value="Tennessee" id="Tennessee">Tennessee</option>
-                    <option value="Texas" id="Texas">Texas</option>
-                    <option value="Utah" id="Utah">Utah</option>
-                    <option value="Vermont" id="Vermont">Vermont</option>
-                    <option value="Virginia" id="Virginia">Virginia</option>
-                    <option value="Washington" id="Washington">Washington</option>
-                    <option value="West Virginia" id="West Virginia">West Virginia</option>
-                    <option value="Wisconsin" id="Wisconsin">Wisconsin</option>
-                    <option value="Wyoming" id="Wyoming">Wyoming</option>
-                </select>
+                <!--Enter US City-->
+                <div class="columns">
+                    <div class="field column is-one-quarter">
+                        <label class="label">Choose a US City</label>
+                        <div class="control">
+                        <input class="input" type="text" placeholder="i.e. Atlanta">
+                        </div>
+                    </div>
+                <!--Enter US State-->
+                    <div class="field column is-2">
+                        <label class="label">Choose a US State</label>
+                        <div class="control">
+                            <div class="select">
+                                <select name="state" id="state" class="select-dropdown">
+                                    <option value="" disabled selected>i.e. California</option>
+                                    <option value="Alabama" id="Alabama">Alabama</option>
+                                    <option value="Alaska" id="Alaska">Alaska</option>
+                                    <option value="Arizona" id="Arizona">Arizona</option>
+                                    <option value="Arkansas" id="Arkansas">Arkansas</option>
+                                    <option value="California" id="California">California</option>
+                                    <option value="Colorado" id="Colorado">Colorado</option>
+                                    <option value="Connecticut" id="Connecticut">Connecticut</option>
+                                    <option value="Delaware" id="Delaware">Delaware</option>
+                                    <option value="Florida" id="Florida">Florida</option>
+                                    <option value="Georgia" id="Georgia">Georgia</option>
+                                    <option value="Hawaii" id="Hawaii">Hawaii</option>
+                                    <option value="Idaho" id="Idaho">Idaho</option>
+                                    <option value="Illinois" id="Illinois">Illinois</option>
+                                    <option value="Indiana" id="Indiana">Indiana</option>
+                                    <option value="Iowa" id="Iowa">Iowa</option>
+                                    <option value="Kansas" id="Kansas">Kansas</option>
+                                    <option value="Kentucky" id="Kentucky">Kentucky</option>
+                                    <option value="Louisiana" id="Louisiana">Louisiana</option>
+                                    <option value="Maine" id="Maine">Maine</option>
+                                    <option value="Maryland" id="Maryland">Maryland</option>
+                                    <option value="Massachusetts" id="Massachusetts">Massachusetts</option>
+                                    <option value="Michigan" id="Michigan">Michigan</option>
+                                    <option value="Minnesota" id="Minnesota">Minnesota</option>
+                                    <option value="Mississippi" id="Mississippi">Mississippi</option>
+                                    <option value="Missouri" id="Missouri">Missouri</option>
+                                    <option value="Montana" id="Montana">Montana</option>
+                                    <option value="Nebraska" id="Nebraska">Nebraska</option>
+                                    <option value="Nevada" id="Nevada">Nevada</option>
+                                    <option value="New Hampshire" id="New Hampshire">New Hampshire</option>
+                                    <option value="New Jersey" id="New Jersey">New Jersey</option>
+                                    <option value="New Mexico" id="New Mexico">New Mexico</option>
+                                    <option value="NY" id="New York">New York</option>
+                                    <option value="North Carolina" id="North Carolina">North Carolina</option>
+                                    <option value="North Dakota" id="North Dakota">North Dakota</option>
+                                    <option value="Ohio" id="Ohio">Ohio</option>
+                                    <option value="Oklahoma" id="Oklahoma">Oklahoma</option>
+                                    <option value="Oregon" id="Oregon">Oregon</option>
+                                    <option value="Pennsylvania" id="Pennsylvania">Pennsylvania</option>
+                                    <option value="Rhode Island" id="Rhode Island">Rhode Island</option>
+                                    <option value="South Dakota" id="South Dakota">South Dakota</option>
+                                    <option value="South Carolina" id="South Carolina">South Carolina</option>
+                                    <option value="Tennessee" id="Tennessee">Tennessee</option>
+                                    <option value="Texas" id="Texas">Texas</option>
+                                    <option value="Utah" id="Utah">Utah</option>
+                                    <option value="Vermont" id="Vermont">Vermont</option>
+                                    <option value="Virginia" id="Virginia">Virginia</option>
+                                    <option value="Washington" id="Washington">Washington</option>
+                                    <option value="West Virginia" id="West Virginia">West Virginia</option>
+                                    <option value="Wisconsin" id="Wisconsin">Wisconsin</option>
+                                    <option value="Wyoming" id="Wyoming">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!--Submit Button-->
+                    <div class="field is-grouped column is-one-quarter">
+                        <div class="control">
+                        <button class="button is-link">Submit</button>
+                        </div>
+                    </div>
+                </div>
             </form>
            
-            <!--Submit Button-->
-            <button class="btn" id="submit-input" type="submit">Submit</button>
-        </form>
+            
+        
     </header>
     <main>
         <div id="data-insert"></div>

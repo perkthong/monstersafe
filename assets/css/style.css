@@ -13,6 +13,10 @@ border-radius: 15%;
 
 #data-insert {
     padding-left: 45px;
+    border: groove;
+    border-radius: 20%;
+    background-color: white;
+    text-align: center;
 }
 
 label {

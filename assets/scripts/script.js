@@ -11,7 +11,7 @@ document
       document.getElementById("state").value =
     state.options[state.selectedIndex].text;
     }
-    console.log("*****",state);
+    // console.log("*****",state);
     
 
     // const state = document.getElementById("#stateIntial").value;
@@ -38,24 +38,27 @@ document
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // console.log("*****", data.data);
-        // let template = "";
-        // data.data.forEach((datum) => {
-        //     template += `
-                // <div>
-                //     <h3>State</h3>
-                //     <p>State: ${datum.province}</p>
-                //     <p>Death: ${datum.deaths}</p>
-                //     <p>Recovered: ${datum.recovered}</p>
-                //     <h3>City</h3>
-                //     <p>City Name: ${datum.region.cities[0].name}</p>
-                //     <p>Death: ${datum.region.cities[0].deaths}</p>
-                //     <p>Recovered: ${datum.region.cities[0].recovered}</p>
-                // </div>
-        //     `;
+        console.log("*****", data.actuals);
+        console.log("jajajja", data.actuals.cases);
+        // var i = data.actuals[0]
+        // for (i in data.actuals.length){
+        //   console.log("hehe",i);
+        // }
+        let template = "";
+          // data.actuals.forEach((datum) => {
+          //   console.log("!!!!!",datum)
+          // });
+          template += `
+            <div>
+              <h3>State</h3>
+              <p>New Cases: ${data.actuals.newCases}</p>
+              <p>Cases: ${data.actuals.cases}</p>
+              <p>Deaths: ${data.actuals.deaths}</p>
+            </div>
+              `;
         // });
-        // console.log(template);
-        // document.querySelector("#data-insert").innerHTML = template;
+        console.log(template);
+        document.querySelector("#data-insert").innerHTML = template;
 
       })
       .catch((err) => {
@@ -63,6 +66,21 @@ document
       })
     //    // collect form data
   });
+
+
+
+  /// add back to template later
+
+  // <p>State: ${datum.province}</p>
+  //<p>Recovered: ${datum.recovered}</p>
+  // <h3>City</h3>
+  // <p>City Name: ${datum.region.cities[0].name}</p>
+  // <p>Death: ${datum.region.cities[0].deaths}</p>
+  // <p>Recovered: ${datum.region.cities[0].recovered}</p>
+
+
+
+
 
 // const state = document.querySelector("#state").value;
 

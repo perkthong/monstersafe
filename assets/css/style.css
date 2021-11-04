@@ -15,7 +15,7 @@ border-radius: 15%;
     padding-left: 45px;
     border: groove;
     border-radius: 20%;
-    background-color: white;
+    background-color: whitesmoke;
     text-align: center;
 }
 
@@ -37,7 +37,10 @@ label {
 }
 
 .contact-info {
-    padding-right: 15px;
     text-align: right;
-    border-style: inset;
+    border-style: solid;
+    padding-right: 4px;
+    position: fixed;
+    bottom: 3px;
+    background-color: #00eee0;
 }

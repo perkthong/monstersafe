@@ -50,10 +50,15 @@ document
           // });
           template += `
             <div>
-              <h3>State</h3>
+              <h3>State: Alabama</h3>
               <p>New Cases: ${data.actuals.newCases}</p>
               <p>Cases: ${data.actuals.cases}</p>
               <p>Deaths: ${data.actuals.deaths}</p>
+              <p>Vaccines Administered: ${data.actuals.vaccinesAdministered}</p>
+              <p>Negative Tests: ${data.actuals.negativeTests}</p>
+              <p>ICU Beds Capacity: ${data.actuals.icuBeds.capacity}</p>
+              <p>ICU Beds Current Total in Use: ${data.actuals.icuBeds.currentUsageTotal}</p>
+              <img src="./assets/alabama.jpg">
             </div>
               `;
         // });

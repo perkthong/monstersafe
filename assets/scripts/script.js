@@ -14,10 +14,11 @@ document
     // console.log("*****",state);
     
 
-    // const state = document.getElementById("#stateIntial").value;
-
+    // const state = 
+    // console.log("State Selector: ", document.getElementById("state"))
+    var stateCode = document.getElementById("state").value;
     fetch(
-      `https://api.covidactnow.org/v2/state/AL.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
+      `https://api.covidactnow.org/v2/state/${stateCode}.json?apiKey=bf076c55a54247e998486f5cc1ba1acc`,
       // {
       //   method: "GET",
       //   headers: {
@@ -50,7 +51,7 @@ document
           // });
           template += `
             <div>
-              <h3>State: Alabama</h3>
+              <h3>State: ${stateCode}</h3>
               <p>New Cases: ${data.actuals.newCases}</p>
               <p>Cases: ${data.actuals.cases}</p>
               <p>Deaths: ${data.actuals.deaths}</p>
@@ -58,7 +59,7 @@ document
               <p>Negative Tests: ${data.actuals.negativeTests}</p>
               <p>ICU Beds Capacity: ${data.actuals.icuBeds.capacity}</p>
               <p>ICU Beds Current Total in Use: ${data.actuals.icuBeds.currentUsageTotal}</p>
-              <img src="./assets/alabama.jpg">
+              <img src="./assets/${stateCode}.jpg">
             </div>
               `;
         // });

@@ -59,7 +59,7 @@ document
               <p>Negative Tests: ${data.actuals.negativeTests}</p>
               <p>ICU Beds Capacity: ${data.actuals.icuBeds.capacity}</p>
               <p>ICU Beds Current Total in Use: ${data.actuals.icuBeds.currentUsageTotal}</p>
-              <img src="./assets/${stateCode}.jpg">
+              <img src="./assets/${stateCode}.JPG">
             </div>
               `;
         // });

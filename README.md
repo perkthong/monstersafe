@@ -9,6 +9,7 @@ hosted on GitHub: https://perkthong.github.io/monstersafe/
 # API's from:
 1) https://covidactnow.org/data-api free API that shows COVID data for all 50 states
 2) http://www.heatmapapi.com/Default.aspx free heat map API
+3) https://developers.google.com/maps/documentation Google Maps API (required for heat map to work)
 
 ## User Story:
 We want to share information with the masses about COVID19. Our group wants to keep people up to date with the latest information from trusted sources, such as: Stanford Medicine Research Center, Harvard Global Health Institute and Georgetown University.
@@ -17,7 +18,12 @@ With our website, users can check the most current COVID19 infected numbers per 
 # Future goals:
 
 1) we hope to have both API's working together on our website
-2) have all 50 states show data (confirmed cases, Vaccines Administed, and ICU beds available )
+2) have all 50 states show data (confirmed cases, Vaccines Administered, and ICU beds available )
 
-
-CSS with BULMA
+# Built with:
+* HTML
+* JavaScript
+* CSS
+* CSS with Bulma
+* jQuery
+* 

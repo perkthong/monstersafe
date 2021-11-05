@@ -36,6 +36,12 @@ label {
     justify-content: center;
 }
 
+.covid-form {
+    text-align: right;
+    padding-right: 15px;
+    background-color: honeydew;
+}
+
 .contact-info {
     text-align: right;
     border-style: solid;

@@ -1,5 +1,8 @@
 body {
     background-color: #00eee0;
+    background-image: url(../images/covid19.jpg);
+    height: 2000px;
+    width: auto;
 }
 
 .hero-body {
@@ -58,10 +61,10 @@ label {
     width: 200px;
     color: #024e76;
     bottom: 140px;
-    left: 1300px;
+    left: 900px;
     border-style: solid;
     padding-right: 4px;
-    position: fixed;
+    position: relative;
     bottom: 3px;
 }
 

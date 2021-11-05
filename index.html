@@ -104,17 +104,20 @@
     <main>
         <div id="data-insert"></div>
         <div id="map"></div>
-                <script>
-                function initMap(){
-                    var options = {
-                        zoom:8,
-                        center:{lat:37.7749,lng:-122.4194}
+        <script>
+            function initMap() {
+                var options = {
+                    zoom: 8,
+                    center: {
+                        lat: 37.7749,
+                        lng: -122.4194
                     }
-    
-                    var map = new google.maps.Map(document.getElementById('map'), options);
-                };
-                console.log(options);
-                </script> -->
+                }
+
+                var map = new google.maps.Map(document.getElementById('map'), options);
+            };
+            console.log(options);
+        </script> -->
         <!-- <div id="data-insert2"></div>-- -->
         <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
 
@@ -141,7 +144,7 @@
 
     <div class="memberform">
         <h3>Create An Account!</h3>
-        <p>Become A Member</p>
+
         <form>
             <label for="name">Enter Screenname:</label>
             <input type="text" placeholder="Screenname" name="name" id="name" /></form>
@@ -151,8 +154,9 @@
         <input type="text" placeholder="password" name="phone" id="phone" />
 
         <button type="submit">
-          Reach Out Today
+        Become A Member
         </button>
+
         </form>
     </div>
     </section>

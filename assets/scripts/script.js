@@ -1,6 +1,5 @@
 //   document.querySelector("#form").addEventListener("submit", (event) => {
 //     event.preventDefault();
-
 document
   .querySelector("#COVID-search-form")
   .addEventListener("submit", (event) => {
@@ -59,9 +58,21 @@ document
               <p>Negative Tests: ${data.actuals.negativeTests}</p>
               <p>ICU Beds Capacity: ${data.actuals.icuBeds.capacity}</p>
               <p>ICU Beds Current Total in Use: ${data.actuals.icuBeds.currentUsageTotal}</p>
-              <img src="./assets/${stateCode}.JPG">
+              
             </div>
               `;
+        // function initMap(){
+        //   var options = {
+        //       zoom:8,
+        //       center:{lat:37.7749,lng:-122.4194}
+        //   }
+
+        //   var map = new google.maps.Map(document.getElementById('map'), options);
+        // };
+        // console.log(initMap());      
+            
+            
+          
         // });
         console.log(template);
         document.querySelector("#data-insert").innerHTML = template;

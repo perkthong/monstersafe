@@ -28,12 +28,12 @@
                     </div>-->
                 <!--Enter US State-->
                     <div class="field column is-2">
-                        <label class="label">Choose a US State</label>
                         <div class="control">
                             <div class="select">
                                 <!-- <input id=stateInitial/> -->
                                 <select id="state" class="select-dropdown" onchange ="myFunction()">
                                     <!-- <option value="" disabled selected>i.e. California</option> -->
+                                    <option value="">Choose a US State</option>
                                     <option value="AL" id="Alabama">Alabama</option>
                                     <option value="AK" id="Alaska">Alaska</option>
                                     <option value="AZ" id="Arizona">Arizona</option>
@@ -103,6 +103,7 @@
     <main>
         <div id="data-insert"></div>
         <div id="map"></div>
+                <!--Google maps API begin-->
                 <script>
                 function initMap(){
                     var options = {
@@ -115,6 +116,8 @@
                 console.log(options);
                 </script>
                 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+                <!--Google maps API end-->
+                <!--Heatmap begin-->
                 <script type="text/javascript">
                     var myHeatmap = new GEOHeatmap();
                     var myData = null;
@@ -151,6 +154,7 @@
                     });
                     });
                     </script>
+                <!--Heatmap end-->
         <!-- <div id="data-insert2"></div>-- -->
 
     </main>

@@ -3,12 +3,12 @@ body {
 }
 
 .hero-body {
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 55px;
-text-align: center;
-background-color: #00eee0;
-border: double;
-border-radius: 15%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 55px;
+    text-align: center;
+    background-color: #00eee0;
+    border: double;
+    border-radius: 15%;
 }
 
 #data-insert {
@@ -43,4 +43,37 @@ label {
     position: fixed;
     bottom: 3px;
     background-color: #00eee0;
+}
+
+.memberform {
+    background-color: #fce138;
+    padding: 20px;
+    width: 500px;
+    color: #024e76;
+}
+
+.memberform {
+    border: 3px solid #024e76;
+    background-color: #fce138;
+    padding: 20px;
+    width: 500px;
+    color: #024e76;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.memberform {
+    border: 3px solid #024e76;
+    background-color: #fce138;
+    padding: 20px;
+    width: 500px;
+    color: #024e76;
+    position: absolute;
+    bottom: 120px;
+    right: 140px;
+}
+
+.memberform p {
+    margin: 5px 0 15px 0;
 }

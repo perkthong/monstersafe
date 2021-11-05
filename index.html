@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,28 +12,28 @@
 
 <body>
     <div class="hero is-primary">
-    <header>
-        <h1 class="hero-body">Monster Safe</h1>
-        <h2 class="travel">Covid Travel Risk Calculator</h2>
+        <header>
+            <h1 class="hero-body">Monster Safe</h1>
+            <h2 class="travel">Covid Travel Risk Calculator</h2>
             <h2 class="travel2">Enter the state you want to find COVID information on.</h2>
     </div>
-            <!--COVID-Search Form-->
-            <form id=COVID-search-form>
-                <!--Enter US City-->
-                <div class="columns level-left level-item">
-                    <!--<div class="field column is-one-quarter">
+    <!--COVID-Search Form-->
+    <form id=COVID-search-form>
+        <!--Enter US City-->
+        <div class="columns level-left level-item">
+            <!--<div class="field column is-one-quarter">
                         <label class="label">Choose a US City</label>
                         <div class="control">
                         <input class="input" type="text" placeholder="i.e. Atlanta">
                         </div>
                     </div>-->
-                <!--Enter US State-->
-                    <div class="field column is-2">
-                        <label class="label">Choose a US State</label>
-                        <div class="control">
-                            <div class="select">
-                                <!-- <input id=stateInitial/> -->
-                                <select id="state" class="select-dropdown" onchange ="myFunction()">
+            <!--Enter US State-->
+            <div class="field column is-2">
+                <label class="label">Choose a US State</label>
+                <div class="control">
+                    <div class="select">
+                        <!-- <input id=stateInitial/> -->
+                        <select id="state" class="select-dropdown" onchange="myFunction()">
                                     <!-- <option value="" disabled selected>i.e. California</option> -->
                                     <option value="AL" id="Alabama">Alabama</option>
                                     <option value="AK" id="Alaska">Alaska</option>
@@ -85,21 +86,21 @@
                                     <option value="WI" id="Wisconsin">Wisconsin</option>
                                     <option value="WY" id="Wyoming">Wyoming</option>
                                 </select>
-                            </div>
-                        </div>
-                    </div>
-                
-                <!--Submit Button-->
-                    <div class="field is-grouped column is-one-quarter">
-                        <div class="control">
-                            <button class="button is-link">Submit</button>
-                        </div>
                     </div>
                 </div>
-            </form>
-           
-            
-        
+            </div>
+
+            <!--Submit Button-->
+            <div class="field is-grouped column is-one-quarter">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
     </header>
     <main>
         <div id="data-insert"></div>
@@ -120,7 +121,27 @@
     </div>
 
     <!--Modal-->
-    
+
     <script src="./assets/scripts/script.js"></script>
+
+
+    <div class="memberform">
+        <h3>Create An Account!</h3>
+        <p>Become A Member</p>
+        <form>
+            <label for="name">Enter full name:</label>
+            <input type="text" placeholder="Your Name" name="name" id="name" />
+            <label for="email">Enter email address:</label>
+            <input type="text" placeholder="Email Address" name="email" id="email" />
+            <label for="phone">Enter a telephone number:</label>
+            <input type="text" placeholder="Phone Number" name="phone" id="phone" />
+
+            <button type="submit">
+          Reach Out Today
+        </button>
+        </form>
+    </div>
+    </section>
 </body>
+
 </html>

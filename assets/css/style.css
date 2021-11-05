@@ -23,6 +23,11 @@ label {
     text-align: center;
 }
 
+#map {
+    height: 400px;
+    width: 40%;
+}
+
 .travel {
     padding-left: 25px;
 }

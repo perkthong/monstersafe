@@ -1,7 +1,7 @@
 body {
     background-color: #00eee0;
     background-image: url(../images/covid19.jpg);
-    height: 2000px;
+    height: 1950px;
     width: auto;
 }
 
@@ -32,12 +32,21 @@ label {
     height: 450px;
 }
 
+.hero-body {
+    color: black;
+    font-style: oblique;
+    font-size: xx-large;
+    text-align: center;
+}
+
 .travel {
     padding-left: 25px;
+    font-size: xx-large;
 }
 
 .travel2 {
     padding-left: 35px;
+    font-size: xx-large;
 }
 
 .control {
@@ -56,16 +65,17 @@ label {
 
 .memberform {
     border: 1.5px solid #024e76;
-    background-color: #fce138;
+    background-color: skyblue;
     padding: 20px;
     width: 200px;
     color: #024e76;
     bottom: 140px;
-    left: 900px;
+    left: 1300px;
     border-style: solid;
     padding-right: 4px;
     position: relative;
     bottom: 3px;
+    border-top-left-radius: 400px;
 }
 
 .memberform p {
@@ -73,8 +83,9 @@ label {
 }
 
 .memberform h3 {
-    font-size: 24px;
+    font-size: 35px;
     margin: 0;
+    font-weight: bold;
 }
 
 .memberinput {
@@ -92,9 +103,29 @@ label {
 }
 
 .memberform button {
-    color: #fce138;
+    color: #61cbeb;
     background-color: #024e76;
     border: none;
     padding: 4px 12px;
     font-size: 16px;
+}
+
+.comment-form {
+    border: 1.5px solid #024e76;
+    background-color: #61cbeb;
+    padding: 20px;
+    width: 200px;
+    color: #024e76;
+    bottom: 140px;
+    left: 1300px;
+    border-style: solid;
+    padding-right: 4px;
+    position: relative;
+    bottom: 3px;
+}
+
+.comment-form h3 {
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
 }

@@ -19,7 +19,7 @@ border-radius: 15%;
     text-align: center;
 }
 
-label {
+#label {
     text-align: center;
 }
 
@@ -30,10 +30,13 @@ label {
 
 .travel {
     padding-left: 25px;
+    font-weight: bold;
+    font-size: large;
 }
 
 .travel2 {
     padding-left: 35px;
+    font-weight: 700;
 }
 
 .control {

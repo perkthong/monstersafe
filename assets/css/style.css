@@ -19,8 +19,8 @@ border-radius: 15%;
     text-align: center;
 }
 
-#label {
-    text-align: center;
+label {
+    text-align: right;
 }
 
 #map {
@@ -29,7 +29,7 @@ border-radius: 15%;
 }
 
 .travel {
-    padding-left: 25px;
+    padding-left: 15px;
     font-weight: bold;
     font-size: large;
 }

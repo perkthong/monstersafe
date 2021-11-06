@@ -17,9 +17,35 @@ document
       .then((data) => {
         console.log(data);
         console.log("*****", data.actuals);
-        console.log("jajajja", data.actuals.cases);
+        console.log("jajajja", stateLocationMapping);
+
+        var currLat
+        var currLng
+        for (i = 0; i < stateLocationMapping.length; i++) {
+          var currState = stateLocationMapping[i]
+          if (currState.stateCode == stateCode)
+          currLat = parseInt(currState.lat)
+          currLng = parseInt(currState.lng)
+          console.log("correctState")
+          console.log(currLat)
+          console.log(currLng)
+        } 
         
         let template = "";
+        //Google Maps API// 
+        function initMap(){
+          var options = {
+              zoom:8,
+              center:{lat: currLat ,lng: currLng}
+          } 
+          
+
+          var map = new google.maps.Map(document.getElementById('map'), options);
+        };
+      
+        initMap()
+          // console.log(options)
+        //template for COVID stats//
           template += `
             <div>
               <h3>State: ${stateCode}</h3>
@@ -33,22 +59,14 @@ document
               
             </div>
               `;
-        // function initMap(){
-        //   var options = {
-        //       zoom:8,
-        //       center:{lat:37.7749,lng:-122.4194}
-        //   }
-
-        //   var map = new google.maps.Map(document.getElementById('map'), options);
-        // };
-        // console.log(initMap());      
+              
             
             
           
         // });
         console.log(template);
         document.querySelector("#data-insert").innerHTML = template;
-
+        console.log(document.querySelector("#data-insert"))
       })
       .catch((err) => {
         console.error(err);

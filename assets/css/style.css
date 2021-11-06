@@ -18,14 +18,16 @@ border-radius: 15%;
 }
 
 #data-insert {
-    border: solid;
-    border-radius: 20%;
     text-align: center;
 }
 
 #map {
     height: 400px;
     width: 40%;
+}
+
+#control {
+    padding-top: 150px;
 }
 
 .travel {

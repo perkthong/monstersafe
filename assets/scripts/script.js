@@ -20,6 +20,16 @@ document
         console.log("jajajja", data.actuals.cases);
         
         let template = "";
+         
+        function initMap(){
+          var options = {
+              zoom:8,
+              center:{lat:37.7749,lng:-122.4194}
+          }
+
+          var map = new google.maps.Map(document.getElementById('map'), options);
+        };
+        console.log(initMap());
           template += `
             <div>
               <h3>State: ${stateCode}</h3>
@@ -33,15 +43,7 @@ document
               
             </div>
               `;
-        // function initMap(){
-        //   var options = {
-        //       zoom:8,
-        //       center:{lat:37.7749,lng:-122.4194}
-        //   }
-
-        //   var map = new google.maps.Map(document.getElementById('map'), options);
-        // };
-        // console.log(initMap());      
+              
             
             
           

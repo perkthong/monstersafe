@@ -15,7 +15,7 @@
         <header>
             <h1 class="hero-body">Monster Safe</h1>
             <h2 class="travel">Covid Travel Risk Calculator</h2>
-            <h2 class="travel2">Enter the state you want to find COVID information on.</h2>
+            <h2 class="travel2"> Please Enter the state you want to find COVID information on.</h2>
     </div>
     <!--COVID-Search Form-->
     <form id=COVID-search-form>
@@ -88,12 +88,10 @@
                     </div>
                 </div>
             </div>
-
             <!--Submit Button-->
             <div class="field is-grouped column is-one-quarter">
-                <div class="control">
-                    <button class="button is-link">Submit</button>
-                </div>
+
+                <button class="button is-link">Submit</button>
             </div>
         </div>
     </form>
@@ -102,25 +100,32 @@
 
     </header>
     <main>
-        <div id="data-insert"></div>
-        <div id="map"></div>
-        <script>
-            function initMap() {
-                var options = {
-                    zoom: 8,
-                    center: {
-                        lat: 37.7749,
-                        lng: -122.4194
-                    }
-                }
+        <div class="control">
+            <div class="information">
+                <h2 class="section-title primary-border">
+                    <div id="data-insert"></div>
 
-                var map = new google.maps.Map(document.getElementById('map'), options);
-            };
-            console.log(options);
-        </script> -->
-        <!-- <div id="data-insert2"></div>-- -->
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+                    <script>
+                        function initMap() {
+                            var options = {
+                                zoom: 8,
+                                center: {
+                                    lat: 37.7749,
+                                    lng: -122.4194
+                                }
+                            }
 
+                            var map = new google.maps.Map(document.getElementById('map'), options);
+                        };
+                        console.log(options);
+                    </script>
+            </div>
+            <div class="google">
+                <div id="map"></div>
+                <!-- <div id="data-insert2"></div>-- -->
+                <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+            </div>
+        </div>
     </main>
     <!--Contact section-->
     <div class="contact-info">
@@ -144,7 +149,6 @@
 
     <div class="memberform">
         <h3>Create An Account!</h3>
-
         <form>
             <label for="name">Enter Screenname:</label>
             <input type="text" placeholder="Screenname" name="name" id="name" /></form>
@@ -152,16 +156,12 @@
         <input type="text" placeholder="Email Address" name="email" id="email" />
         <label for="phone">Enter password:</label>
         <input type="text" placeholder="password" name="phone" id="phone" />
-
-        <button type="submit">
-        Become A Member
-        </button>
-
+        <button type="submit">Become A Member</button>
         </form>
     </div>
 
     <div class="comment-form">
-        <h3>Contact Us</h3>
+        <h3>Comments</h3>
         <form>
             <label for="contact-name">Your Name</label>
             <input type="text" id="contact-name" placeholder="Your Name" />
@@ -180,10 +180,13 @@
             <img src="./assets/images/step-1.svg" alt="" />
         </div>
         <div class="latest-updates-text">
-            <h4>Please Click The Link Below</h4>
+            <h4>Please Click The Link Below:</h4>
             <h5><a href="https://www.who.int/">World Health Organization</a></h5>
         </div>
         </section>
+
+
+
 </body>
 
 </html>

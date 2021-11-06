@@ -1,19 +1,59 @@
 body {
-    background-color: #50fff1;
+    background-color: #00eee0;
 }
 
-.page-title {
+.hero-body {
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: 55px;
 text-align: center;
+background-color: #00eee0;
+border: double;
+border-radius: 15%;
 }
 
-.button {
+#target {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+
+#data-insert {
+    text-align: center;
+    padding-top: 175px;
+    border-radius: 30%;
+    background-color: lightblue;
+}
+
+#map {
+    height: 600px;
+    width: 60%;
+}
+
+#control {
+    padding-top: 150px;
+}
+
+.travel {
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.travel2 {
+    padding-left: 35px;
+    font-weight: 700;
+}
+
+.control {
     display: flex;
     justify-content: center;
 }
 
 .contact-info {
-    padding-right: 15px;
     text-align: right;
+    border-style: solid;
+    padding-right: 4px;
+    position: fixed;
+    bottom: 3px;
+    background-color: #00eee0;
 }

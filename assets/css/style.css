@@ -11,16 +11,16 @@ border: double;
 border-radius: 15%;
 }
 
-#data-insert {
-    padding-left: 45px;
-    border: groove;
-    border-radius: 20%;
-    background-color: whitesmoke;
-    text-align: center;
+#target {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
-label {
-    text-align: right;
+#data-insert {
+    border: solid;
+    border-radius: 20%;
+    text-align: center;
 }
 
 #map {

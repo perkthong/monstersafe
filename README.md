@@ -11,8 +11,9 @@ hosted on GitHub: https://perkthong.github.io/monstersafe/
 2) http://www.heatmapapi.com/Default.aspx free heat map API
 
 ## User Story:
-We want to share information with the masses about COVID19. Our group wants to keep people up to date with the latest information from trusted sources, such as: Stanford Medicine Research Center, Harvard Global Health Institute and Georgetown University.
-With our website, users can check the most current COVID19 infected numbers per state.
+AS AN average American it's easy to be overwhelmed by the 24/7 news feed about COVID19. <br>I WANT an easy to read website with current information from trusted sources. <br>
+SO THAT I can easily digest the numbers for each state, such as new cases of diagnosed patients and number of vaccines administered to the state's population.
+
 
 # Future goals:
 

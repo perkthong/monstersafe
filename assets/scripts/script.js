@@ -20,7 +20,7 @@ document
         console.log("jajajja", data.actuals.cases);
         
         let template = "";
-         
+        //Google Maps API// 
         function initMap(){
           var options = {
               zoom:8,
@@ -30,6 +30,7 @@ document
           var map = new google.maps.Map(document.getElementById('map'), options);
         };
         console.log(initMap());
+        //template for COVID stats//
           template += `
             <div>
               <h3>State: ${stateCode}</h3>

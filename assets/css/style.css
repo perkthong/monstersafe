@@ -11,7 +11,7 @@ border: double;
 border-radius: 15%;
 }
 
-#data-insert {
+#data-insert > *{
     padding-left: 45px;
     border: groove;
     border-radius: 20%;

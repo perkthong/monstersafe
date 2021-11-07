@@ -1,14 +1,17 @@
 body {
     background-color: #00eee0;
+    height: 1950px;
+    width: auto;
 }
 
 .hero-body {
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 55px;
-text-align: center;
-background-color: #00eee0;
-border: double;
-border-radius: 15%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 55px;
+    text-align: center;
+    background-color: #00eee0;
+    background-image: url(../images/box.jpg);
+    border: double;
+    border-radius: 15%;
 }
 
 #target {
@@ -25,23 +28,29 @@ border-radius: 15%;
 }
 
 #map {
-    height: 600px;
-    width: 60%;
+    width: 450px;
+    height: 450px;
 }
 
-#control {
-    padding-top: 150px;
+.hero-body {
+    color: black;
+    font-style: oblique;
+    font-size: xx-large;
+    text-align: center;
 }
 
 .travel {
-    padding-left: 15px;
-    font-weight: bold;
-    font-size: large;
+    padding-left: 25px;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .travel2 {
     padding-left: 35px;
-    font-weight: 700;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .control {
@@ -56,4 +65,126 @@ border-radius: 15%;
     position: fixed;
     bottom: 3px;
     background-color: #00eee0;
+}
+
+.memberform {
+    border: 1.5px solid #024e76;
+    background-color: skyblue;
+    padding: 20px;
+    width: 200px;
+    color: #024e76;
+    bottom: 140px;
+    left: 1300px;
+    border-style: solid;
+    padding-right: 4px;
+    position: relative;
+    bottom: 3px;
+    border-top-left-radius: 400px;
+}
+
+.memberform p {
+    margin: 5px 0 15px 0;
+}
+
+.memberform h3 {
+    font-size: 35px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.comment-form button {
+    border: 1px solid #024e76;
+    display: block;
+    padding: 4px 12px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.memberform label {
+    margin: 0 5px;
+}
+
+.memberform button {
+    color: #61cbeb;
+    background-color: #024e76;
+    border: none;
+    padding: 4px 12px;
+    font-size: 16px;
+}
+
+.comment-form {
+    border: 1.5px solid #024e76;
+    background-color: #61cbeb;
+    padding: 20px;
+    width: 200px;
+    color: #024e76;
+    bottom: 140px;
+    left: 1300px;
+    border-style: solid;
+    padding-right: 4px;
+    position: relative;
+    bottom: 3px;
+}
+
+.comment-form h3 {
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.article h3 {
+    font-size: 28px;
+    font-weight: bolder;
+    font-style: italic;
+    color: rgb(26, 57, 230);
+    border: 1.5px solid #024e76;
+    background-color: #61cbeb;
+    padding: 20px;
+    width: 230px;
+    bottom: 100px;
+    left: 450px;
+    border-style: solid;
+    padding-right: 1px;
+    position: relative;
+    bottom: 2px;
+}
+
+.latest-updates-text h5 {
+    margin: 20px auto;
+    padding-bottom: 10px;
+    width: 80%;
+    border-bottom: 8px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(201, 221, 20);
+    font-size: 55px;
+    font-weight: bolder;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.google {
+    padding-bottom: 10px;
+    margin: 0 auto 25px auto;
+    width: 25%;
+}
+
+.information {
+    padding-bottom: 10px;
+    margin: 0 auto 15px auto;
+    width: 25%;
+}
+
+.columns level-left level-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
 }

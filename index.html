@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,104 +12,108 @@
 
 <body>
     <div class="hero is-primary">
-    <header>
-        <h1 class="hero-body">Monster Safe</h1>
-        <h2 class="travel">Covid Travel Risk Calculator</h2>
+        <header>
+            <h1 class="hero-body">Monster Safe</h1>
+            <h2 class="travel">Covid Travel Risk Calculator</h2>
             <h2 class="travel2">Enter the state you want to find COVID information on.</h2>
     </div>
-            <!--COVID-Search Form-->
-            <form id=COVID-search-form>
-                <!--Enter US City-->
-                <div class="columns level-left level-item">
-                    <!--<div class="field column is-one-quarter">
+    <!--COVID-Search Form-->
+    <form id=COVID-search-form>
+        <!--Enter US City-->
+        <div class="columns level-left level-item">
+            <!--<div class="field column is-one-quarter">
                         <label class="label">Choose a US City</label>
                         <div class="control">
                         <input class="input" type="text" placeholder="i.e. Atlanta">
                         </div>
                     </div>-->
-                <!--Enter US State-->
-                    <div class="field column is-2">
-                        <div class="control">
-                            <div class="select">
-                                <!-- <input id=stateInitial/> -->
-                                <select id="state" class="select-dropdown" onchange ="myFunction()">
-                                    <!-- <option value="" disabled selected>i.e. California</option> -->
-                                    <option value="">Choose a US State</option>
-                                    <option value="AL" id="Alabama">Alabama</option>
-                                    <option value="AK" id="Alaska">Alaska</option>
-                                    <option value="AZ" id="Arizona">Arizona</option>
-                                    <option value="AR" id="Arkansa">Arkansas</option>
-                                    <option value="CA" id="Califronia">California</option>
-                                    <option value="CO" id="Colorado">Colorado</option>
-                                    <option value="CT" id="Connecticut">Connecticut</option>
-                                    <option value="DE" id="Delaware">Delaware</option>
-                                    <option value="FL" id="Florida">Florida</option>
-                                    <option value="GA" id="Georgia">Georgia</option>
-                                    <option value="HI" id="Hawaii">Hawaii</option>
-                                    <option value="ID" id="Idaho">Idaho</option>
-                                    <option value="IL" id="Illinois">Illinois</option>
-                                    <option value="IN" id="Indiana">Indiana</option>
-                                    <option value="IO" id="Iowa">Iowa</option>
-                                    <option value="KS" id="Kansas">Kansas</option>
-                                    <option value="KY" id="Kentucky">Kentucky</option>
-                                    <option value="LA" id="Louisiana">Louisiana</option>
-                                    <option value="ME" id="Maine">Maine</option>
-                                    <option value="MD" id="Maryland">Maryland</option>
-                                    <option value="MA" id= "Michigan">Michigan</option>
-                                    <option value="MN" id="Minnesota">Minnesota</option>
-                                    <option value="MS" id="Mississippi">Mississippi</option>
-                                    <option value="MO" id="Missouri">Missouri</option>
-                                    <option value="MT" id="Montana">Montana</option>
-                                    <option value="NE" id="Nebraska">Nebraska</option>
-                                    <option value="NV" id="Nevada">Nevada</option>
-                                    <option value="NH" id="New Hampshire">New Hampshire</option>
-                                    <option value="NH" id="New Jersey">New Jersey</option>
-                                    <option value="NM" id="New Mexico">New Mexico</option>
-                                    <option value="NY" id="New York">New York</option>
-                                    <option value="NC" id="North Carolina">North Carolina</option>
-                                    <option value="ND" id="North Dakot">North Dakota</option>
-                                    <option value="OH" id="Ohio">Ohio</option>
-                                    <option value="OK" id="Oklahoma">Oklahoma</option>
-                                    <option value="OR" id="Oregon">Oregon</option>
-                                    <option value="PA" id="Pennsylvania">Pennsylvania</option>
-                                    <option value="RI" id="Rhode Island">Rhode Island</option>
-                                    <option value="SD" id="South Dakota">South Dakota</option>
-                                    <option value="SC" id="South Carolina">South Carolina</option>
-                                    <option value="TN" id="Tennessee">Tennessee</option>
-                                    <option value="TX" id="Texas">Texas</option>
-                                    <option value="UT" id="Utah">Utah</option>
-                                    <option value="VT" id="Vermont">Vermont</option>
-                                    <option value="VA" id="Virginia">Virginia</option>
-                                    <option value="WA" id="Washington">Washington</option>
-                                    <option value="WV" id="West Virginia">West Virginia</option>
-                                    <option value="WI" id="Wisconsin">Wisconsin</option>
-                                    <option value="WY" id="Wyoming">Wyoming</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                
-                <!--Submit Button-->
-                    <div class="field is-grouped column is-one-quarter">
-                        <div class="control">
-                            <button class="button is-link">Submit</button>
-                        </div>
+            <!--Enter US State-->
+            <div class="field column is-2">
+                <div class="control">
+                    <div class="select">
+                        <!-- <input id=stateInitial/> -->
+                        <select id="state" class="select-dropdown" onchange="myFunction()">
+                            <!-- <option value="" disabled selected>i.e. California</option> -->
+                            <option value="">Choose a US State</option>
+                            <option value="AL" id="Alabama">Alabama</option>
+                            <option value="AK" id="Alaska">Alaska</option>
+                            <option value="AZ" id="Arizona">Arizona</option>
+                            <option value="AR" id="Arkansa">Arkansas</option>
+                            <option value="CA" id="Califronia">California</option>
+                            <option value="CO" id="Colorado">Colorado</option>
+                            <option value="CT" id="Connecticut">Connecticut</option>
+                            <option value="DE" id="Delaware">Delaware</option>
+                            <option value="FL" id="Florida">Florida</option>
+                            <option value="GA" id="Georgia">Georgia</option>
+                            <option value="HI" id="Hawaii">Hawaii</option>
+                            <option value="ID" id="Idaho">Idaho</option>
+                            <option value="IL" id="Illinois">Illinois</option>
+                            <option value="IN" id="Indiana">Indiana</option>
+                            <option value="IO" id="Iowa">Iowa</option>
+                            <option value="KS" id="Kansas">Kansas</option>
+                            <option value="KY" id="Kentucky">Kentucky</option>
+                            <option value="LA" id="Louisiana">Louisiana</option>
+                            <option value="ME" id="Maine">Maine</option>
+                            <option value="MD" id="Maryland">Maryland</option>
+                            <option value="MA" id="Michigan">Michigan</option>
+                            <option value="MN" id="Minnesota">Minnesota</option>
+                            <option value="MS" id="Mississippi">Mississippi</option>
+                            <option value="MO" id="Missouri">Missouri</option>
+                            <option value="MT" id="Montana">Montana</option>
+                            <option value="NE" id="Nebraska">Nebraska</option>
+                            <option value="NV" id="Nevada">Nevada</option>
+                            <option value="NH" id="New Hampshire">New Hampshire</option>
+                            <option value="NH" id="New Jersey">New Jersey</option>
+                            <option value="NM" id="New Mexico">New Mexico</option>
+                            <option value="NY" id="New York">New York</option>
+                            <option value="NC" id="North Carolina">North Carolina</option>
+                            <option value="ND" id="North Dakot">North Dakota</option>
+                            <option value="OH" id="Ohio">Ohio</option>
+                            <option value="OK" id="Oklahoma">Oklahoma</option>
+                            <option value="OR" id="Oregon">Oregon</option>
+                            <option value="PA" id="Pennsylvania">Pennsylvania</option>
+                            <option value="RI" id="Rhode Island">Rhode Island</option>
+                            <option value="SD" id="South Dakota">South Dakota</option>
+                            <option value="SC" id="South Carolina">South Carolina</option>
+                            <option value="TN" id="Tennessee">Tennessee</option>
+                            <option value="TX" id="Texas">Texas</option>
+                            <option value="UT" id="Utah">Utah</option>
+                            <option value="VT" id="Vermont">Vermont</option>
+                            <option value="VA" id="Virginia">Virginia</option>
+                            <option value="WA" id="Washington">Washington</option>
+                            <option value="WV" id="West Virginia">West Virginia</option>
+                            <option value="WI" id="Wisconsin">Wisconsin</option>
+                            <option value="WY" id="Wyoming">Wyoming</option>
+                        </select>
                     </div>
                 </div>
-            </form>
-           
-            
-        
+            </div>
+
+            <!--Submit Button-->
+            <div class="field is-grouped column is-one-quarter">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
     </header>
     <main>
-        <div id="data-insert"></div>
-        <div id="map"></div>
-  
+        <body>
+            <div id="target">
+                <div id="map"></div>
+                <div id="data-insert"></div>
+            </div>
+        </body>
 
-    
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
-    <script async src="https://maps.googleapis.com/maps/api/place/details/output?parameters"></script>
-    <script src="./assets/scripts/US-state-lat-lng.js"></script>
-    <script src="./assets/scripts/script.js"></script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+        <script async src="https://maps.googleapis.com/maps/api/place/details/output?parameters"></script>
+        <script src="./assets/scripts/US-state-lat-lng.js"></script>
+        <script src="./assets/scripts/script.js"></script>
 </body>
+
 </html>

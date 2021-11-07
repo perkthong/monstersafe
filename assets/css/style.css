@@ -11,15 +11,16 @@ border: double;
 border-radius: 15%;
 }
 
-#data-insert {
-    padding-left: 45px;
-    border: groove;
-    border-radius: 20%;
-    background-color: whitesmoke;
-    text-align: center;
+#target {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-label {
+#data-insert {
+    border: groove;
+    border-radius: 5%;
+    background-color: whitesmoke;
     text-align: center;
 }
 

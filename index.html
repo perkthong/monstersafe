@@ -15,20 +15,26 @@
         <header>
             <h1 class="hero-body">Monster Safe</h1>
             <h2 class="travel">Covid Travel Risk Calculator</h2>
-            <h2 class="travel2"> Please Enter the state you want to find COVID information on.</h2>
+            <h2 class="travel2">Enter the state you want to find COVID information on.</h2>
     </div>
     <!--COVID-Search Form-->
     <form id=COVID-search-form>
         <!--Enter US City-->
         <div class="columns level-left level-item">
+            <!--<div class="field column is-one-quarter">
+                        <label class="label">Choose a US City</label>
+                        <div class="control">
+                        <input class="input" type="text" placeholder="i.e. Atlanta">
+                        </div>
+                    </div>-->
             <!--Enter US State-->
             <div class="field column is-2">
-                <label class="label">Choose a US State</label>
                 <div class="control">
                     <div class="select">
                         <!-- <input id=stateInitial/> -->
                         <select id="state" class="select-dropdown" onchange="myFunction()">
                             <!-- <option value="" disabled selected>i.e. California</option> -->
+                            <option value="">Choose a US State</option>
                             <option value="AL" id="Alabama">Alabama</option>
                             <option value="AK" id="Alaska">Alaska</option>
                             <option value="AZ" id="Arizona">Arizona</option>
@@ -82,48 +88,81 @@
                     </div>
                 </div>
             </div>
+
             <!--Submit Button-->
             <div class="field is-grouped column is-one-quarter">
-
-                <button class="button is-link">Submit</button>
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
             </div>
-        </div>
     </form>
-
-
-
     </header>
-    <main>
-        <div id="target">
-                  <div class="information">
-                <h2 class="section-title primary-border">
-                    <div id="data-insert"></div>
 
+    <main>
+
+        <body>
+            <div id="target">
+                <div id="map">
+                    <!--Google maps API begin-->
                     <script>
                         function initMap() {
                             var options = {
                                 zoom: 8,
-                                center: {
-                                    lat: 37.7749,
-                                    lng: -122.4194
-                                }
+                                center: { lat: 37.7749, lng: -122.4194 }
                             }
 
                             var map = new google.maps.Map(document.getElementById('map'), options);
                         };
                         console.log(options);
                     </script>
-            </div>
-            <div class="google">
-                <div id="map"></div>
-                <!-- <div id="data-insert2"></div>-- -->
-                <script async
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
-            </div>
-            <div id="data-insert2"></div>
-        </div>
-    </main>
+                    <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+                    <!--Google maps API end-->
+                    <!--Heatmap begin-->
+                    <script type="text/javascript">
+                        var myHeatmap = new GEOHeatmap();
+                        var myData = null;
+                        $(function () {
+                            // create data
+                            myData = new Array();
+                            for (p = 0; p < 50; p++) {
+                                var rLatD = Math.floor(Math.random() * 1000);
+                                var rLonD = Math.floor(Math.random() * 1000);
+                                var rValD = Math.floor(Math.random() * 10);
 
+                                myData.push(38.47 + (rLatD / 15000));
+                                myData.push(-121.84 + (rLonD / 15000));
+                                myData.push(rValD);
+                            }
+
+                            // configure HeatMapAPI
+                            myHeatmap.Init(400, 300); // set at pixels for your map
+                            myHeatmap.SetBoost(0.8);
+                            myHeatmap.SetDecay(0); // see documentation
+                            myHeatmap.SetData(myData);
+                            myHeatmap.SetProxyURL('http://www.yourwebsite.com/proxy.php');
+
+                            // set up Google map, pass in the heatmap function
+                            var myLatlng = new google.maps.LatLng(38.5, -121.8);
+                            var myOptions = {
+                                zoom: 11,
+                                center: myLatlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            }
+                            var map = new google.maps.Map(document.getElementById("map"), myOptions);
+                            google.maps.event.addListener(map, 'idle', function (event) {
+                                myHeatmap.AddOverlay(this, myHeatmap);
+                            });
+                        });
+                    </script>
+                </div>
+                <div id="data-insert"></div>
+            </div>
+
+        </body>
+    </main>
+    <!--Heatmap end-->
+    <!-- <div id="data-insert2"></div>-- -->
 
     <div class="contact-info">
         <div>
@@ -140,6 +179,12 @@
     </section>
 
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
+    <script type="text/javascript" src="http://www.heatmapapi.com/Javascript/HeatmapAPIGoogle3.js"></script>
+    <script type="text/javascript"
+        src="http://www.heatmapapi.com/Javascript/HeatMapAPI3.aspx?k=537aae4c-1b0a-4f9f-8633-1217c7f65f85"></script>
     <script src="./assets/scripts/script.js"></script>
 </body>
 

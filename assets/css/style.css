@@ -31,6 +31,10 @@ border-radius: 15%;
     width: 40%;
 }
 
+#clearDiv {
+    padding-left: 11px;
+}
+
 .travel {
     padding-left: 25px;
     font-size: large;

@@ -23,6 +23,7 @@
         <!--Enter US City-->
         <div class="columns level-left level-item">
         </div>
+        
         <!--Enter US State-->
         <div class="field column is-2">
             <div class="controls">
@@ -92,7 +93,9 @@
             </div>
         </div>
     </form>
-
+    <div id=clearDiv>
+        <button id="clear" onclick="allClear()" class="button is-link">Clear Last Search</button>
+    </div>
 
 
     </header>
@@ -102,9 +105,7 @@
             <div id="data-insert"></div>
         </div>
     </main>
-    <div id=clearDiv>
-        <button id="clear" onclick="allClear()" class="button is-link">Clear Home State</button>
-    </div>
+
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
     <script async src="https://maps.googleapis.com/maps/api/place/details/output?parameters"></script>

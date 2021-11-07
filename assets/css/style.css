@@ -37,11 +37,6 @@ border-radius: 15%;
     padding-left: 35px;
 }
 
-.control {
-    display: flex;
-    justify-content: center;
-}
-
 .contact-info {
     text-align: right;
     border-style: solid;

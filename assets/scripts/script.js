@@ -17,16 +17,15 @@ document
       .then((data) => {
         console.log(data);
         console.log("*****", data.actuals);
-        console.log("jajajja", stateLocationMapping);
+        console.log("stateLatLng_Coordinates", stateLocationMapping);
 
         var currLat
         var currLng
         for (i = 0; i < stateLocationMapping.length; i++) {
           var currState = stateLocationMapping[i]
           if (currState.stateCode == stateCode)
-          currLat = parseInt(currState.lat)
-          currLng = parseInt(currState.lng)
-          console.log("correctState")
+          currLat = parseFloat(currState.lat)
+          currLng = parseFloat(currState.lng)
           console.log(currLat)
           console.log(currLng)
         } 
@@ -35,7 +34,7 @@ document
         //Google Maps API// 
         function initMap(){
           var options = {
-              zoom:8,
+              zoom:6,
               center:{lat: currLat ,lng: currLng}
           } 
           
@@ -43,7 +42,7 @@ document
           var map = new google.maps.Map(document.getElementById('map'), options);
         };
       
-        initMap()
+          initMap()
           // console.log(options)
         //template for COVID stats//
           template += `

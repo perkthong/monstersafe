@@ -13,6 +13,7 @@ border-radius: 15%;
 
 #target {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 

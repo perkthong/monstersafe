@@ -23,11 +23,11 @@ document
         var currLng
         for (i = 0; i < stateLocationMapping.length; i++) {
           var currState = stateLocationMapping[i]
-          if (currState.stateCode == stateCode)
+          if (currState.stateCode == stateCode) {
           currLat = parseFloat(currState.lat)
           currLng = parseFloat(currState.lng)
           console.log(currLat)
-          console.log(currLng)
+          console.log(currLng) }
         } 
         
         let template = "";

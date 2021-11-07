@@ -11,16 +11,19 @@ border: double;
 border-radius: 15%;
 }
 
-#data-insert > *{
-    padding-left: 45px;
-    border: groove;
-    border-radius: 20%;
-    background-color: whitesmoke;
-    text-align: center;
+#target {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-label {
+#data-insert > *{
+    border: groove;
+    border-radius: 10%;
+    background-color: whitesmoke;
     text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #map {
@@ -30,22 +33,9 @@ label {
 
 .travel {
     padding-left: 25px;
+    font-size: large;
 }
 
 .travel2 {
     padding-left: 35px;
-}
-
-.control {
-    display: flex;
-    justify-content: center;
-}
-
-.contact-info {
-    text-align: right;
-    border-style: solid;
-    padding-right: 4px;
-    position: fixed;
-    bottom: 3px;
-    background-color: #00eee0;
 }

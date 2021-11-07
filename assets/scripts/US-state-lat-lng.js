@@ -8,7 +8,7 @@ var stateLocationMapping = [
     { name: "Oregon, USA", "lat": "44.000000", "lng": "-120.500000", "stateCode": "OR" },
     { name: "New York, USA", "lat": "43.000000", "lng": "-75.000000", "stateCode": "NY" },
     { name: "New Hampshire, USA", "lat": "44.000000", "lng": "-71.500000", "stateCode": "NH" },
-    { name: "Nebraska, USA", "lat": "41.500000", "lng": "-100.000000", "stateCode": "NB" },
+    { name: "Nebraska, USA", "lat": "41.500000", "lng": "-100.000000", "stateCode": "NE" },
     { name: "Kansas, US", "lat": "38.500000", "lng": "-98.000000", "stateCode": "KS" },
     { name: "Mississippi, US", "lat": "33.000000", "lng": "-90.000000", "stateCode": "MS" },
     { name: "Illinois, USA", "lat": "40.000000", "lng": "-89.000000", "stateCode": "IL" },

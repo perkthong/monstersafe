@@ -4,11 +4,11 @@ document
   .addEventListener("submit", (event) => {
     event.preventDefault();
 
-    function myFunction() {
-    var stateInitial = document.getElementById("state");
-      document.getElementById("state").value =
-    state.options[state.selectedIndex].text;
-    }
+    // function myFunction() {
+    // var stateInitial = document.getElementById("state");
+    //   document.getElementById("state").value =
+    // state.options[state.selectedIndex].text;
+    // }
     
     var stateCode = document.getElementById("state").value;
     fetch(
@@ -19,10 +19,13 @@ document
         console.log(data);
         
 
-        var states = JSON.parse(localStorage.getItem("states")) || []
+        var states = JSON.parse(localStorage.getItem("states")) || [];
+        console.log(states);
         var filteredStates = states.filter(function(state){
           return state.code === stateCode;
-        })
+        // 
+        }) || [];
+        console.log(filteredStates);
         if(filteredStates.length <= 0) {
           var stateData = {
             code: stateCode,
@@ -31,13 +34,14 @@ document
             deaths: data.actuals.deaths,
             vaccinesAdministered: data.actuals.vaccinesAdministered,
             negativeTests: data.actuals.negativeTests,
-            icubedscap: data.actuals.icuBedscapacity,
+            icubedscap: data.actuals.icuBeds.capacity,
             icubedsuse: data.actuals.icuBeds.currentUsageTotal,
           }
           states.push(stateData)
-          localStorage.setItem("states", JSON.stringify(states))
+          
         };
-        
+        // states.push(filteredStates)
+        localStorage.setItem("states", JSON.stringify(states));
         var currLat
         var currLng
         for (i = 0; i < stateLocationMapping.length; i++) {
@@ -99,8 +103,10 @@ document
     // collect form data
   });
   var statesLocalStorage = JSON.parse(localStorage.getItem("states"));
+  console.log(statesLocalStorage);
   // console.log(statesLocalStorage);
   if (statesLocalStorage.length>0) {
+    console.log(statesLocalStorage);
     // do for loops for state in the storage
     // localStorage.forEach(i => console.log(i));
     for (var i=0; i< statesLocalStorage.length; i++){
@@ -110,12 +116,14 @@ document
     // var s  = statesLocalStorage[i];
   
     // console.log("yea");
-    
+    // var s = statesLocalStorage[0];
+  console.log(s);
+  //var s = statesLocalStorage[0];
       let template= "";
       let temp2 = "";
       template += `
             <div>
-              <p> Home State <p>
+              <p> Last Search: <p>
               <h3>State: ${s.code}</h3>
               <p>New Cases: ${s.newCases}</p>
               <p>Cases: ${s.cases}</p>
@@ -141,7 +149,7 @@ document
         document.querySelector("#data-insert").appendChild(di2);
         console.log(di2);
       
-  };
+      };
 
 document.querySelector("#clear").addEventListener("click",allClear());
 function allClear() {

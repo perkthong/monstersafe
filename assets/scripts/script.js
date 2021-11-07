@@ -1,4 +1,3 @@
-// document.
 
 document
   .querySelector("#COVID-search-form")
@@ -29,7 +28,11 @@ document
             code: stateCode,
             newCases: data.actuals.newCases,
             cases: data.actuals.cases,
-            deaths: data.actuals.deaths
+            deaths: data.actuals.deaths,
+            vaccinesAdministered: data.actuals.vaccinesAdministered,
+            negativeTests: data.actuals.negativeTests,
+            icubedscap: data.actuals.icuBedscapacity,
+            icubedsuse: data.actuals.icuBeds.currentUsageTotal,
           }
           states.push(stateData)
           localStorage.setItem("states", JSON.stringify(states))
@@ -117,10 +120,10 @@ document
               <p>New Cases: ${s.newCases}</p>
               <p>Cases: ${s.cases}</p>
               <p>Deaths: ${s.deaths}</p>
-              <p>Vaccines Administered: 1</p>
-              <p>Negative Tests: 1</p>
-              <p>ICU Beds Capacity: 1</p>
-              <p>ICU Beds Current Total in Use: 1</p>
+              <p>Vaccines Administered: ${s.vaccinesAdministered}</p>
+              <p>Negative Tests: ${s.negativeTests}</p>
+              <p>ICU Beds Capacity: ${s.icubedscap}</p>
+              <p>ICU Beds Current Total in Use: ${s.icubedsuse}</p>
             </div>
               `;
           temp2 += `
@@ -139,3 +142,8 @@ document
         console.log(di2);
       
   };
+
+document.querySelector("#clear").addEventListener("click",allClear());
+function allClear() {
+  localStorage.clear();
+};

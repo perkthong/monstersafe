@@ -92,8 +92,8 @@
                 <!--Submit Button-->
                     <div class="field is-grouped column is-one-quarter">
                         <div class="control">
-                            <button class="button is-link">Submit</button>
-                            <button class="button is-link">Clear Home State</button>
+                            <button id="submit" class="button is-link">Submit</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -106,8 +106,10 @@
         <div id="data-insert"></div>
         <div id="map"></div>
   
-
-    
+    </main>
+    <div id=clearDiv>
+        <button id="clear" onclick="allClear()" class="button is-link">Clear Home State</button>
+    </div>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFBHVzUNtiq7z0zQOADmefQkiD5lc0HY&callback=initMap"></script>
     <script async src="https://maps.googleapis.com/maps/api/place/details/output?parameters"></script>
     <script src="./assets/scripts/US-state-lat-lng.js"></script>

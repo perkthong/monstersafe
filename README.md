@@ -16,7 +16,7 @@ We want to share information with the masses about COVID19. Our group wants to k
 With our website, users can check the most current COVID19 infected numbers per state.
 
 ## Screenshoot of the finished website
-<img src=./capture.png>
+![Capture](https://user-images.githubusercontent.com/88611613/140680698-fa03752f-6440-4238-92b4-4261976b187b.PNG)
 
 # Future goals:
 

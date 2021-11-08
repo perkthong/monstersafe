@@ -15,6 +15,9 @@ hosted on GitHub: https://perkthong.github.io/monstersafe/
 We want to share information with the masses about COVID19. Our group wants to keep people up to date with the latest information from trusted sources, such as: Stanford Medicine Research Center, Harvard Global Health Institute and Georgetown University.
 With our website, users can check the most current COVID19 infected numbers per state.
 
+## Screenshoot of the finished website
+<img src=./capture.png>
+
 # Future goals:
 
 1) we hope to have both API's working together on our website
@@ -26,4 +29,3 @@ With our website, users can check the most current COVID19 infected numbers per 
 * CSS
 * CSS with Bulma
 * jQuery
-* 

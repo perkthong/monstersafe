@@ -26,8 +26,6 @@ If people are feeling like too much irrelevant information is flooding out of al
 1) https://covidactnow.org/data-api free API that shows COVID data for all 50 states
 2) http://www.heatmapapi.com/Default.aspx free heat map API
 
-CSS with BULMA
-
 
 # Future goals:
 
@@ -41,5 +39,5 @@ CSS with BULMA
 * CSS with Bulma
 * jQuery
 =======
-2) have all 50 states show data (confirmed cases, Vaccines Administed, and ICU beds available )
+
 

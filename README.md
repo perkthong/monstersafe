@@ -27,12 +27,11 @@ If people are feeling like too much irrelevant information is flooding out of al
 2) http://www.heatmapapi.com/Default.aspx free heat map API
 
 CSS with BULMA
->>>>>>> 6b65021a1ff78499dcaeaca316b7460117b42964
+
 
 # Future goals:
 
 1) we hope to have both API's working together on our website
-<<<<<<< HEAD
 2) have all 50 states show data (confirmed cases, Vaccines Administered, and ICU beds available )
 
 # Built with:
@@ -43,4 +42,4 @@ CSS with BULMA
 * jQuery
 =======
 2) have all 50 states show data (confirmed cases, Vaccines Administed, and ICU beds available )
->>>>>>> 6b65021a1ff78499dcaeaca316b7460117b42964
+

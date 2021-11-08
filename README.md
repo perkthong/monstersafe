@@ -9,7 +9,7 @@ hosted on GitHub: https://perkthong.github.io/monstersafe/
 <<<<<<< HEAD
 # API's from:
 1) https://covidactnow.org/data-api free API that shows COVID data for all 50 states
-2) http://www.heatmapapi.com/Default.aspx free heat map API
+2) https://maps.googleapis.com/maps/api/place/details/output?parameters Google Places API supplementary API to go with Google Maps
 3) https://developers.google.com/maps/documentation Google Maps API (required for heat map to work)
 
 ## User Story:

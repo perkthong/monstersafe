@@ -1,43 +1,46 @@
-# Group 7 Project
+# MonsterSafe
+Monster Safe is a COVID-19 stat tracking interactinve front-end application built with HTML, CSS Bulma, and JavaScript. Here, users can compare and contrast COVID stats between different states to be better informed about potential infection rates when making domestic travel plans. We want to share information with the masses about COVID19. Our group wants to keep people up to date with the latest information from trusted sources, such as: Stanford Medicine Research Center, Harvard Global Health Institute and Georgetown University.
 
-Monster Safe: COVID19 map and information per state
+## Table of Contents
+- [3rd-Party APIs](#3rd_party_apis)
+- [Licence](#license)
+- [Technologies Used](#technologies_used)
+- [Screenshot](#screenshot)
+- [Deployed Link](#deployed_link)
+- [Collaborators](#collaborators)
 
 Group Members: Kaylin, Jeremy, Perk, and Gregory
 
-hosted on GitHub: https://perkthong.github.io/monstersafe/
 
-<<<<<<< HEAD
-# API's from:
+
+## 3rd-Party APIs:
 1) https://covidactnow.org/data-api free API that shows COVID data for all 50 states
 2) https://maps.googleapis.com/maps/api/place/details/output?parameters Google Places API supplementary API to go with Google Maps
 3) https://developers.google.com/maps/documentation Google Maps API (required for heat map to work)
 
-## User Story:
-We want to share information with the masses about COVID19. Our group wants to keep people up to date with the latest information from trusted sources, such as: Stanford Medicine Research Center, Harvard Global Health Institute and Georgetown University.
-With our website, users can check the most current COVID19 infected numbers per state.
+## Licenses
 
-## Screenshoot of the finished website
-![Capture](https://user-images.githubusercontent.com/88611613/140680698-fa03752f-6440-4238-92b4-4261976b187b.PNG)
-=======
-## User Story:
-If people are feeling like too much irrelevant information is flooding out of all new sources. People want clean cut and easy to digest information that is not overwhelming. Now Group 7 has come together to create a highly interactive website that gives users updated information about COVID19 across all 50 states from trusted sources.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# API's from:
-1) https://covidactnow.org/data-api free API that shows COVID data for all 50 states
-2) http://www.heatmapapi.com/Default.aspx free heat map API
+### Copyright 2021 Monstersafe
 
-
-# Future goals:
-
-1) we hope to have both API's working together on our website
-2) have all 50 states show data (confirmed cases, Vaccines Administered, and ICU beds available )
-
-# Built with:
+## Technologies Used:
 * HTML
 * JavaScript
 * CSS
 * CSS with Bulma
 * jQuery
-=======
 
+## Screenshot:
+![Capture](https://user-images.githubusercontent.com/88611613/140680698-fa03752f-6440-4238-92b4-4261976b187b.PNG)
+
+## Deployed Link:
+
+hosted on GitHub: https://perkthong.github.io/monstersafe/
+
+## Collaborators:
+- [Jeremy Huynh](https://github.com/jermeewinn)
+- [Kaylin Boyle](https://github.com/kaynboyle)
+- [Perk Thong](https://github.com/perkthong)
+- [Gregory Alcala](https://github.com/phonecologne)
 
